@@ -8,7 +8,7 @@ var firebaseConfig = {
 	measurementId: "G-LZL1CB5HH0"
 }; firebase.initializeApp(firebaseConfig);
 
-if(!window.location.href.includes('rkweb')){ 
+if(!window.location.href.includes('chlogs')){ 
 	if(!window.location.href.includes('5501')) {
 		window.location.assign('index')
 	}
