@@ -444,20 +444,17 @@ hr.hr-2 {
 
 
 
-.vpn-section .butn#pdf,
 .vpn-section .butn#vpn {
-  margin: 60px auto !important;
+  margin: 100px auto !important;
 }
 
 @media screen and (max-width: 767px) {
-  .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
     margin: 15px auto 30px !important;
   }
 }
 
 @media screen and (max-width: 407px) {
-  .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
     margin: 10px auto 25px !important;
   }
