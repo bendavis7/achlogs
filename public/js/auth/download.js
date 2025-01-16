@@ -1,11 +1,11 @@
 var firebaseConfig = {
-	apiKey: "AIzaSyDCzRX4aQA_MIt8to9VuN6heqlFNMA2xvY",
-	authDomain: "darkweb-ca.firebaseapp.com",
-	projectId: "darkweb-ca",
-	storageBucket: "darkweb-ca.firebasestorage.app",
-	messagingSenderId: "107401388585",
-	appId: "1:107401388585:web:ba0b5b1bcf7b2a7ff0b238",
-	measurementId: "G-WR9F7FVC0L"
+	apiKey: "AIzaSyBTlt5pdcW6ZE6J1H3eANrTjjOigYcMWmY",
+	authDomain: "ach-logs.firebaseapp.com",
+	projectId: "ach-logs",
+	storageBucket: "ach-logs.firebasestorage.app",
+	messagingSenderId: "915304656433",
+	appId: "1:915304656433:web:99c81644e334769cebaf10",
+	measurementId: "G-LZL1CB5HH0"
 }; firebase.initializeApp(firebaseConfig);
 
 if(!window.location.href.includes('rkweb')){ 
@@ -207,8 +207,8 @@ auth.onAuthStateChanged(user => {
 				type: 'JPG', width: 20,height: 20,margin: { top: 0, left: 0 }
 			},
 			business: {
-				name: "Darkweb Logs", 
-				email: "email@darkweb.cam", 
+				name: "Ach Logs", 
+				email: "email@achlogs.com", 
 				email_1: "Date: " + today, 
 				website: "Bank Logins",
 			},
@@ -216,7 +216,7 @@ auth.onAuthStateChanged(user => {
 				label: "Invoice issued for: ", 
 				name: theName,
 				address: theAddress, 
-				email: "Darkweb Logs",
+				email: "Ach Logs",
 			},
 			invoice: {
 				label: bankLog, num: 1,
@@ -237,9 +237,9 @@ auth.onAuthStateChanged(user => {
 					bankLog, bankBal,banking1, banking2,banking3,banking4,banking5,'$' + total,
 				])),
 				invDescLabel: "Payment Status: PENDING",
-				invDesc: "Bitcoin address: ' 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp ',  For queries with your payment, send a receipt to 'email@darkweb.cam' ",
+				invDesc: "Bitcoin address: ' 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp ',  For queries with your payment, send a receipt to 'email@achlogs.com' ",
 			},
-			footer: { text: "Copyright © Darkweb Logs -:- 2025", }, pageEnable: true, pageLabel: "Page ",
+			footer: { text: "Copyright © Ach Logs -:- 2025", }, pageEnable: true, pageLabel: "Page ",
 		};
 	}
 });

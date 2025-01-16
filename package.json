@@ -3,14 +3,14 @@
     "firebase": "^11.1.0",
     "gh-pages": "^6.2.0"
   },
-  "name": "darkweb",
+  "name": "achlogs",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "deploy": "gh-pages -d public"
   },
   "keywords": [],
-  "homepage": "https://joemunene91.github.io/ink",
+  "homepage": "https://joemunene91.github.io/achlogs",
   "author": "",
   "license": "ISC",
   "description": ""

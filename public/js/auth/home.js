@@ -1,13 +1,13 @@
 var firebaseConfig = {
-	apiKey: "AIzaSyDCzRX4aQA_MIt8to9VuN6heqlFNMA2xvY",
-	authDomain: "darkweb-ca.firebaseapp.com",
-	projectId: "darkweb-ca",
-	storageBucket: "darkweb-ca.firebasestorage.app",
-	messagingSenderId: "107401388585",
-	appId: "1:107401388585:web:ba0b5b1bcf7b2a7ff0b238",
-	measurementId: "G-WR9F7FVC0L"
+	apiKey: "AIzaSyBTlt5pdcW6ZE6J1H3eANrTjjOigYcMWmY",
+	authDomain: "ach-logs.firebaseapp.com",
+	projectId: "ach-logs",
+	storageBucket: "ach-logs.firebasestorage.app",
+	messagingSenderId: "915304656433",
+	appId: "1:915304656433:web:99c81644e334769cebaf10",
+	measurementId: "G-LZL1CB5HH0"
 }; firebase.initializeApp(firebaseConfig);
-var theWebsite = 'https://www.darkweb.cam/home';
+var theWebsite = 'https://www.achlogs.com/home';
 
 const auth = firebase.auth();
 var nesh = localStorage.getItem('banklogs');
