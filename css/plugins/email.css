@@ -1,0 +1,140 @@
+#logs-invoice {
+    height: 100vh !important;
+    padding: 0 10px !important;
+}
+  #logs-invoice div {
+    overflow: hidden !important;
+  }
+  
+  #my-invoice {
+    margin: 3px !important;
+    padding: 0px !important;
+    width: 100% !important;
+  }
+  #invoice-div {
+    margin-top: 5vh;
+  }
+  @media screen and (min-width: 1370px) {
+    #invoice-div {
+        margin-top: 7vh;
+    }
+  }
+  @media screen and (max-width: 821px) {
+    #invoice-div {
+        margin-top: 10vh;
+    }
+  }
+  @media screen and (max-width: 570px) {
+    #invoice-div {
+        margin-top: 7vh;
+    }
+  }
+  
+  #invoice-div p {
+    margin: 13px auto !important;
+    font-size: 23px !important;
+    line-height: 65px !important;
+  }
+  
+  @media screen and (min-width: 1370px) {
+    #invoice-div p {
+        font-size: 24px !important;
+        line-height: 70px !important;
+    }
+  }
+  #invoice-div p span {
+    font-weight: 600;
+  }
+  @media screen and (max-width: 574px) {
+    #invoice-div p {
+        margin: 13px auto !important;
+        font-size: 21.5px !important;
+        line-height: 63px !important;
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    #invoice-div p {
+        font-size: 21px !important;
+        line-height: 60px !important;
+    }
+  }
+  
+  #my-invoice span {
+    font-weight: 600;
+  }
+  
+  
+  #voice-body-div {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+    
+    margin: 3px !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+  }
+  #voice-body-div p {
+    font-weight: 500 !important;
+  }
+  @media (min-width: 802px) {
+  #invoice-div.col-lg-5 {
+    -ms-flex: 0 0 33%;
+    flex: 0 0 33%;
+    max-width: 33%;
+   }
+  }
+  @media (max-width: 500px)  {
+    #invoice-div.col-12 {
+      -ms-flex:0 0 91%;
+      flex:0 0 91%;
+      max-width: 91%;
+    }  
+  }
+  @media (max-width: 400px)  {
+    #invoice-div.col-12 {
+      -ms-flex:0 0 93.5%;
+      flex:0 0 93.5%;
+      max-width: 93.5%;
+    }  
+  }
+  
+  #my-invoice {
+    border: 5px solid rgba(22, 160, 134, 0.5) !important;
+    background: rgb(19, 42, 60) !important;
+  }
+  
+  #my-invoice p {
+    color: rgb(19, 58, 69) !important;
+  }
+  
+  
+  .nohr {
+    border: 0.7px solid rgba(22, 160, 134, 0.3);
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  @media screen and (min-width: 1370px) {
+    .nohr {
+        padding: 0 !important;
+        margin: 10px !important;
+    }
+  }
+
+  
+  p#wild, 
+  p#would {
+    color: lightcyan !important;
+  }
+  
+  span#in-span {
+    color: rgb(139, 209, 68) !important;
+  }
+  
+
+
+#clients {
+    position: fixed !important;
+    bottom: 3px !important;
+}
+  

@@ -1,0 +1,465 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800&amp;display=swap);
+#clients img,
+.navbar-nav > li {
+  box-shadow: 0 0 0.7px 1.7px rgba(71, 88, 143, 0.5) !important;
+  background-color: rgba(71, 88, 143, 0.2) !important;
+}
+@media screen and (max-width: 1092px) {
+  .navbar-nav > li {
+    box-shadow: 0 0 14px 1.7px rgba(71, 88, 143, 0.5) !important;
+    background-color: rgba(71, 88, 143, 0.2) !important;
+  }
+}
+.logo-50 {
+  border: 1.4px solid rgba(71, 88, 143, 0.7);
+}
+.form-control::placeholder{
+  color: rgb(31, 44, 74, 0.9)
+}
+.modal-invoice,
+.modal-checkout {
+  border-top: 1.4px solid rgba(71, 88, 143, 0.5) !important;
+}
+#copy-text,
+.butn.white.in-cart,
+.butn.in-cart,
+#cartlength {
+  background: rgb(209, 213, 36) !important;
+}
+#preloader:before {
+  border: 3px solid #47588f;
+}
+#preloader:after {
+  border: 3px solid #47588f;
+}
+a:hover,
+a:active {
+  color: #47588f;
+  text-decoration: none;
+}
+
+.thegold {
+  background-color: rgba(71, 88, 143, 0.3);
+}
+.hermes.tparrows,
+.hermes .tp-arr-allwrapper {
+  border: 1.4px solid rgba(71, 88, 143, 0.3);
+}
+.hermes.tparrows:before,
+.hermes .tp-arr-titleholder {
+	color:#47588f;
+}
+@media screen and (max-width: 1092px) {
+  .navbar-nav{
+    border: 1.4px solid rgba(71, 88, 143, 0.7) !important;
+    box-shadow: 0px 5px 10px 0px rgba(71, 88, 143, 0.7);
+  }
+  .navbar-nav li {
+    border-bottom: 1.4px solid rgba(71, 88, 143, 0.3);
+  }
+  .navbar-toggler {
+    border: 1.1px solid #47588f;
+    box-shadow: 0 0 0 1.1px rgb(132, 144, 180)
+  }
+  .navbar-toggler:after {
+    border-bottom: 2.5px solid #47588f;
+  }
+  .navbar-toggler:before {
+    background: #47588f;
+    border: 1.2px solid #47588f;
+  }
+  .navbar-toggler.menu-opened:after {
+    background: #47588f;
+  }
+  .navbar-toggler.menu-opened:after {
+    border: 1.4px solid #47588f !important;
+  }
+  .navbar-toggler.menu-opened:before {
+    border: 1.4px solid #47588f !important;
+  }
+  .navbar-toggler:after {
+    border-top: 2.5px solid #47588f;
+  }
+}
+.attr-nav > ul > li.dropdown ul.dropdown-menu {
+  border: 1.4px solid rgba(71, 88, 143, 0.7) !important;
+  box-shadow: 0px 5px 10px 0px rgba(71, 88, 143, 0.7);
+}
+.attr-nav > ul > li.dropdown ul.dropdown-menu li {
+  border-bottom: 1.4px solid rgba(71, 88, 143, 0.3) !important;
+}
+.navbar-default {
+  border-bottom: 2px solid rgba(71, 88, 143, 0.49);
+}
+
+.text-theme-color {
+  color: #47588f;
+}
+#todo-input {
+  box-shadow: 0 1px 2px 0 #47588f !important;
+  border: 0.7px solid #47588f !important;
+}
+#log-input {
+  box-shadow: 0 1px 2px 0 #47588f !important;
+  border: 0.7px solid #47588f !important;
+}
+blink {
+  background: #fff;
+  color: #47588f;
+  border: 1.4px solid #47588f;
+  box-shadow: 0 0 0 1.4px #fff;
+  animation: blinkez 3s linear infinite;
+}
+@keyframes blinkez {
+  0% {
+    background: #fff;
+    color: #47588f;
+    border: 1.4px solid #47588f;
+    box-shadow: 0 0 0 1.4px #fff;
+  }
+  50% {
+    background: #47588f;
+    color: #fff;
+    border: 1.4px solid #fff;
+    box-shadow: 0 0 0 1.4px #47588f;
+  }
+   100% {
+    background: #fff;
+    color: #47588f;
+    border: 1.4px solid #47588f;
+    box-shadow: 0 0 0 1.4px #fff;
+  }
+}
+
+.banner-words-wrapper b {
+  color: rgb(132, 144, 181);
+}
+.banner-headline .banner-words-wrapper:after {
+	background: #47588f;
+}
+.scroll-to-top {
+  border: 2px solid #47588f;
+}
+.scroll-to-top:hover {
+  color: #47588f;
+}
+.scroll-to-top:hover i {
+  color: #47588f;
+}
+.scroll-to-top:visited {
+  color: #47588f;
+}
+
+.butn {
+  border: 1.4px solid #47588f;
+}
+
+.butn:after {
+  background: #47588f;
+}
+.butn.white:hover {
+  border: 1.4px solid #47588f;
+}
+.butn.in-cart {
+  border: 1.4px solid #47588f !important;
+}
+.butn.in-cart:hover {
+  border: 1.4px solid #47588f !important;
+}
+.section-heading h4:after {
+  background: #47588f;
+}
+.money,
+.lesnar {
+  border: 1.4px solid #47588f;
+}
+.butn.gold {
+  border: 1.4px solid rgba(71, 88, 143, 0.8);
+  background: rgb(218, 222, 236);
+}
+.navbar-nav li.nav-small.open a {
+  background: #47588f;
+  border: 1.4px solid rgb(218, 222, 236);
+}
+.navbar-nav li.nav-small.open a::after {
+  background: rgb(218, 222, 236);
+}
+.port a.butn,
+#jinaHolder,
+#jinaHolder2 {
+  color: rgb(194, 199, 218) !important;
+}
+
+#the-life {
+  box-shadow: 1px 1px 2px 1px rgba(71, 88, 143, 0.5) !important;
+}
+.modal-content {
+  border: 1.4px solid rgba(71, 88, 143, 0.49);
+}
+#photo,
+#photo2,
+#text {
+  background: rgba(71, 88, 143, 0.07) !important;
+  border: 0.7px solid rgba(71, 88, 143, 0.21);
+}
+.ticketz .modal-body label {
+  color: #47588f !important;
+}
+.change {
+  border: 1.4px solid rgba(71, 88, 143, 0.03) !important;
+}
+
+.progress-bar-striped {
+	border: 0.7px solid rgba(71, 88, 143, 0.49) !important;
+  box-shadow: 0 0 0 0.7px rgba(71, 88, 143, 0.7) !important;
+}
+
+
+.owl-theme .owl-dots .owl-dot.active span,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background-color: #47588f;
+}
+.owl-carousel .owl-nav button.owl-next,
+.owl-carousel .owl-nav button.owl-prev {
+  border: 1.4px solid rgba(71, 88, 143, 1);
+}
+#profileModal .modal-content,
+#uploadModal .modal-content,
+#exampleModal .modal-content {
+  background: rgba(36, 49, 82, 0.5) !important;
+  border: 1.4px solid rgba(71, 88, 143, 0.7) !important;
+  box-shadow: 0px 5px 10px 0px rgba(71, 88, 143, 0.3);
+}
+#modalsend {
+  background: rgba(71, 88, 143, 0.25) !important;
+}
+.bg-bro {
+  background-color: rgba(71, 88, 143, 1);
+}
+
+.modal-btn,
+.lesnar,
+.gold,
+#tick,
+#pdf,
+#vpn,
+.custom-file-label::after,
+.navbar-nav li.nav-small a,
+#showtoasts,
+#copy-text,
+.money {
+  background: rgb(216, 219, 231) !important;
+  box-shadow: 0 0 0 1px rgb(163, 172, 199);
+  color: rgb(27, 39, 66) !important;
+}
+.custom-file-label {
+  color: #47588f !important;
+}
+#copy-text,
+.lesnar {
+  background: rgb(209, 213, 36) !important;
+}
+
+.modal-body div p,
+.account {
+  border: 1.4px solid rgba(71, 88, 143, 0.3);
+}
+#uploadModal .modal-header .close img,
+#exampleModal .modal-header .close img,
+.btn-remove {
+  border: 1.4px solid rgba(71, 88, 143, 0.7);
+}
+.modal-body {
+  border: 1.4px solid rgba(71, 88, 143, 0.21);
+}
+.accordion-style .btn-link {
+  background: rgb(163, 172, 199) !important;
+  color: rgb(30, 43, 72) !important;
+}
+.accordion-style .btn-link:hover {
+  background: #47588f !important;
+}
+
+.thehr {
+  border: 1px solid rgba(71, 88, 143, 0.3);
+}
+.navbar-nav li.nav-small.open a {
+  border: 1.3px solid rgb(30, 43, 72) !important;
+  background: rgb(163, 172, 200) !important;
+  box-shadow: 0 0 0 1px rgb(132, 144, 180) !important;
+}
+#canvas,
+#canvas2 {
+  border: 1.4px solid #47588f;
+}
+#canvas:hover {
+  box-shadow: 0 25px 30px 0 #47588f;
+}
+
+span#uidy {
+  color: rgb(163, 172, 199) !important;
+}
+#showtoasts {
+  border: 2.2px solid rgba(71, 88, 143, 0.7);
+  background:linear-gradient(to bottom, #fff 0%, #47588f 100%) !important;
+}
+#vpn,
+#mails,
+#email-phone {
+  background:linear-gradient(to bottom, #fff 0%, #47588f 100%) !important;
+  color: rgb(25, 36, 63) !important;
+  border: 2.2px solid rgba(58, 73, 120, 0.7);
+}
+#services-carousel button.owl-next i,
+#services-carousel button.owl-prev i {
+  color: rgb(25, 36, 63) !important;
+}
+
+#text-to-copy {
+  border: 1.4px solid rgba(71, 88, 143, 0.7);
+}
+.progress{
+  border: 1.4px solid rgba(71, 88, 143, 0.3);
+}
+
+
+.pricing-list {
+  border: 1.5px solid rgba(71, 88, 143, 0.49);
+  background: rgb(20, 32, 55);
+}
+.pricing-list:hover {
+  box-shadow: 0 5px 10px 0 #47588f;
+}
+
+.pricing-list ul li:after {
+  background: rgba(71, 88, 143, 0.25);
+}
+
+
+
+
+
+
+
+
+
+
+
+.pricing-list.highlight {
+  background: rgb(148, 158, 190);
+  border: 1.4px solid #47588f;
+}
+.pricing-list h2,
+.pricing-list ul li {
+  color: rgba(71, 88, 143, 0.92);
+}
+.pricing-list h2.text-white,
+.pricing-list ul li.text-white {
+  color: rgb(30, 43, 72) !important;
+}
+.pricing-list button {
+  color: rgb(31, 44, 74) !important;
+  border: 1.4px solid #47588f !important;
+}
+.pricing-list.highlight button {
+  color: rgb(30, 43, 72) !important;
+  border: 1.4px solid rgb(30, 43, 72) !important;
+}
+.pricing-list.highlight button.white::after {
+  background: rgb(30, 43, 72) !important;
+}
+.pricing-list ul li.text-white:nth-child(1)::-webkit-scrollbar-thumb {
+  background: rgb(45, 59, 97)
+}
+.pricing-list.highlight ul li:after {
+  background: rgba(45, 59, 97, 0.3);
+}
+
+
+
+
+
+.bro-text p:after{
+	background: rgba(71, 88, 143, 0.92);
+}
+
+
+.port a img{
+  border: 2px solid rgba(71, 88, 143, 0.49);
+  border-bottom: none;
+}
+.port h4{
+  border: 2px solid rgba(71, 88, 143, 0.3);
+}
+.port:hover {
+  box-shadow: 0 3px 7px 0 rgba(71, 88, 143, 0.7);
+}
+#modalsend {
+  border: 2px solid rgba(71, 88, 143, 0.2);
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(108, 121, 165);
+}
+
+.logo-img {
+  border: 1.4px solid rgba(71, 88, 143, 0.3);
+}
+#style-switcher {
+  box-shadow: 0px 7px 21px 0 rgba(71, 88, 143, 0.3);
+  border: 1.4px solid rgba(71, 88, 143, 0.3);
+}
+.filtering .butn {
+  border: 1.4px solid rgba(71, 88, 143, 0.81);
+  color: #47588f;
+  background: rgb(20, 32, 55);
+}
+.filtering .butn.white:after{
+  background: rgb(20, 32, 55);
+}
+.filtering .butn.white {
+  background: rgb(148, 158, 190);
+  color: rgb(30, 43, 72);
+  border: 1.4px solid #47588f;
+}
+.filtering .butn.white > i {
+  color: rgb(30, 43, 72);
+}
+.filtering .butn.white:hover{
+  box-shadow: 0 1px 2px 0 #47588f;
+  border: 1.4px solid #47588f;
+  transform: scale(1.07);
+  color: #47588f;
+}
+.filtering .butn > i {
+  color: #47588f;
+}
+.filtering .butn.white:hover i{
+  color: #47588f;
+  transition: all 0.7s ease;
+}
+
+.google {
+  background: rgb(163, 172, 199)
+}
+
+.cd-time-img {
+  border: 1.4px solid #47588f;
+  background: rgb(45, 59, 97)
+}
+.cd-time-content {
+  border: 2px solid rgb(45, 59, 97)
+}
+
+span#span {
+  color: rgb(209, 213, 36) !important
+}
+
+#profileModal .modal-content {
+  border: 1.4px solid rgba(71, 88, 143, 0.7) !important;
+  box-shadow: 0px 5px 10px 0px rgba(71, 88, 143, 0.3);
+}
+#services-carousel button.owl-prev,
+#services-carousel button.owl-next {
+  border: 2px solid rgb(45 59 98) !important;
+  background: linear-gradient(to bottom, #fff 0%, #47588f 100%) !important;
+}
