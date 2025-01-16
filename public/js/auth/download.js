@@ -25,7 +25,6 @@ const db = firebase.firestore();
 var thePerson = '';
 var nesh = localStorage.getItem('banklogs');
 var vpnButn = document.getElementById('vpn');
-var pdfButn = document.getElementById('pdf');
 
 var navo = document.getElementsByClassName('navbar-header')[0];
 var navbarTo = document.getElementsByClassName('navbar-toggler')[0];
@@ -159,10 +158,6 @@ auth.onAuthStateChanged(user => {
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
-
-	pdfButn.addEventListener('click', () => {
-		setTimeout(() => { generatePDF(); }, 2000);
-	});
 
 	function generatePDF() {
 		var pdfObject = jsPDFInvoiceTemplate.default(props);

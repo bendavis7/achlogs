@@ -245,15 +245,9 @@ function updateCartTotal() {
             theLogo.classList.add('bit-img'); theLogo.classList.add('logo-50');
         }
 
-        if (window.innerWidth > 762) { 
-            document.getElementById('flex-one').style.display = 'flex'; 
-            document.getElementById('pdf').innerHTML = `
-                .PDFs <img src="img/partners/pdf.png"> 
-            `;
-            document.getElementById('vpn').innerHTML = `
-                Email <img src="img/partners/check.png">
-            `;
-        } 
+        // if (window.innerWidth > 762) { 
+        //     document.getElementById('flex-one').style.display = 'flex'; 
+        // } 
 
         if (window.innerWidth > 1082) { 
             document.getElementsByClassName('vpn-section')[0].classList.add('grids');

@@ -2020,7 +2020,6 @@ ul.countdown li p {
   text-align: center !important;
   display: flex !important;
 }
-.vpn-section .butn#pdf,
 .vpn-section .butn#vpn {
   margin: 40px auto 30px !important;
   cursor: pointer;
@@ -2036,13 +2035,11 @@ ul.countdown li p {
   font-size: 22px !important;
   padding: 11px 11px !important;
 }
-#pdf img, #pdf i,
 #vpn img, #vpn i {
   margin-left: 10px !important;
 }
 
 @media screen and (max-width: 767px) {
-  .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
     font-size: 28px !important;
     letter-spacing: 1.7px !important;
@@ -2054,14 +2051,12 @@ ul.countdown li p {
     padding: 10.5px 10.5px !important;
   }
 
-  #pdf img, #pdf i,
   #vpn img, #vpn i {
     margin-left: 6px !important;
   }
 }
 
 @media screen and (max-width: 407px) {
-  .vpn-section .butn#pdf,
   .vpn-section .butn#vpn {
     font-size: 27px !important;
     letter-spacing: 1.6px !important;
