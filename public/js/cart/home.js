@@ -49,10 +49,12 @@ if(localStorage.getItem('banklogs')){
 
         updateCartTotal();
     } else {
-        document.getElementById('cartlength').style.display = 'none'; 
+        document.getElementById('cartlength').style.display = 'none'; setTimeout(() => { window.location.assign('chime'); }, 4000);
+        var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
     }
 } else {
-    document.getElementById('cartlength').style.display = 'none'; 
+    document.getElementById('cartlength').style.display = 'none'; setTimeout(() => { window.location.assign('chime'); }, 4000);
+    var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
 }
 
 
