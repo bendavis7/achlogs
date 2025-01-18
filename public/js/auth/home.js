@@ -32,8 +32,6 @@ const theForm = document.getElementById('the-form');
 fetch('https://ipapi.co/json/').then(function(response) { return response.json()}).then(function(data) {
 	theCountry = data.country_calling_code; 
 	theFlag7.src = `https://flagcdn.com/144x108/${(data.country_code).toLowerCase()}.png`;
-	localStorage.setItem('locationZ', data.country_name +  ', ' + data.city); 
-	localStorage.setItem('citiZ', (data.city).substring(0, 8) + ', ' + data.country_code);
 });
 
 document.getElementById('would').innerHTML = `
@@ -53,10 +51,10 @@ auth.onAuthStateChanged(user => {
 				if((JSON.parse(nesh).length) > 0) {
 					window.location.assign('download');
 				} else {
-					window.location.assign('index');
+					window.location.assign('chime');
 				}
 			} else {
-				window.location.assign('index');
+				window.location.assign('chime');
 			}
 		}
 	} 
