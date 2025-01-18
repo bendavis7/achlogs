@@ -70,11 +70,7 @@ auth.onAuthStateChanged(user => {
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
-			vpnButn.addEventListener('click', ()=> { 
-				document.getElementById('modem').click();  });
 		} else {
-			vpnButn.addEventListener('click', ()=> { 
-				window.location.assign('home');  });
 			if (window.innerWidth < 1082) { 
 				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
 			} else { 
@@ -135,14 +131,14 @@ auth.onAuthStateChanged(user => {
 						Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
 					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6500, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 				} else { 
-					setTimeout(() => { generatePDF(); }, 8000);
+					setTimeout(() => { generatePDF(); }, 7500);
 					var shortCutFunction = 'success';  var msg = ` 
 						${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 						Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
 					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6500, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 				} });
 			} else {
-				setTimeout(() => { generatePDF(); }, 8000);
+				setTimeout(() => { generatePDF(); }, 7500);
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.      <hr class="to-hr hr15-top"> 
 						Logins can be sent as a <br> .PDF file or via EMAIL.        <hr class="hr15-top"> `;
