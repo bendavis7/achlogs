@@ -162,7 +162,7 @@ auth.onAuthStateChanged(user => {
 	vpnButn.addEventListener('click', () => {
 		setTimeout(() => {
 			generatePDF();
-		}, 1800);
+		}, 2000);
 	})
 
 	function generatePDF() {
