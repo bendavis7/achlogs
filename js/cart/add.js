@@ -169,7 +169,7 @@ function addToCartClick(event) {
 
     setTimeout(() => { 
         window.location.assign('download');
-    }, 2000);            
+    }, 1800);            
 }
 
 
