@@ -5,9 +5,6 @@ var theLogo = document.getElementById('logo');
 var monezB = document.getElementById('monez');
 var thetotS = document.getElementById('thetot');
 
-var vpnButx = document.getElementById('vpn');
-
-
 if(localStorage.getItem('banklogs')){
     if((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
         items = JSON.parse(localStorage.getItem('banklogs'));
@@ -115,9 +112,6 @@ if(localStorage.getItem('banklogs')){
 
         thetotS.addEventListener('click', ()=> { 
             document.getElementById('modem').click(); });
-
-        vpnButx.addEventListener('click', ()=> { 
-            document.getElementById('modem').click();  });
         
         document.getElementById('the-logs').addEventListener('click', ()=> { 
             document.getElementById('modem').click(); });
@@ -125,11 +119,11 @@ if(localStorage.getItem('banklogs')){
         document.getElementById('modem').addEventListener('click', () => { 
             setTimeout(() => { monezB.click(); }, 2000); });
     } else {
-        document.getElementById('cartlength').style.display = 'none'; setTimeout(() => { window.location.assign('index'); }, 4000);
+        document.getElementById('cartlength').style.display = 'none'; setTimeout(() => { window.location.assign('index'); }, 5000);
         var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
     }
 } else {
-    document.getElementById('cartlength').style.display = 'none'; setTimeout(() => { window.location.assign('index'); }, 4000);
+    document.getElementById('cartlength').style.display = 'none'; setTimeout(() => { window.location.assign('index'); }, 5000);
     var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
 }
 
