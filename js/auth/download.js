@@ -154,7 +154,7 @@ auth.onAuthStateChanged(user => {
 				}
 			});
 
-			setTimeout(() => { $('#exampleModal').modal('hide'); }, 4000);
+			setTimeout(() => { $('#exampleModal').modal('hide'); }, 4500);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
