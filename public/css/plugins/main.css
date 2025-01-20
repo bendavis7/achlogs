@@ -426,7 +426,7 @@ blink {
   height: auto;
   transform: none;
   width: auto;
-  top: 16px;
+  top: 17px;
 }
 .accordion-style .btn-link:after {
   background: none;
@@ -438,7 +438,7 @@ blink {
   height: auto;
   transform: none;
   width: auto;
-  top: 16px;
+  top: 17px;
   position: absolute;
 }
 .accordion-style .card-body {
