@@ -408,7 +408,7 @@ blink {
     text-align: left;
     white-space: normal;
     border-radius: 1px;
-    padding: 16px 32px 16px 16px;
+    padding: 17px 34px 17px 17px;
     text-decoration: none;
   }  
 }
@@ -902,7 +902,7 @@ select {
 }
 @media screen and (max-width: 567px) {
   .btn-link {
-    font-size: 17.2px !important;
+    font-size: 17px !important;
   }
 }
 .border p:first-child::after {
