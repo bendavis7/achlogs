@@ -295,7 +295,7 @@
   })(jQuery);
   
   window.addEventListener("load", () => {
-    var binance = 105000;
+    var binance = 104000;
 
     let ws = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@kline_1h');
     ws.onmessage = (event) => {
@@ -304,9 +304,9 @@
       binance = (parseFloat(stockObject.k.c));
 
       if (localStorage.getItem('banklogs') && JSON.parse(localStorage.getItem('banklogs')).length == 1) {
-        localStorage.setItem('btcTotal', (localStorage.getItem('banktotal') / binance).toFixed(4));
+        localStorage.setItem('btcTotal', (localStorage.getItem('banktotal') / binance).toFixed(5));
       } else if (localStorage.getItem('banklogs') && JSON.parse(localStorage.getItem('banklogs')).length > 1) {
-        localStorage.setItem('btcTotal', (localStorage.getItem('divtotal') / binance).toFixed(4));
+        localStorage.setItem('btcTotal', (localStorage.getItem('divtotal') / binance).toFixed(5));
       }
     }
     
