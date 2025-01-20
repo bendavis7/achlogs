@@ -127,7 +127,8 @@ padding:"inner"+a,content:b,"":"outer"+a},function(c,d){n.fn[d]=function(d,e){va
             autoplayTimeout: 5000, 
             autoplaySpeed: 5000,
             responsive: {
-                0: {items: 1, margin: 10, dotsEach: 3 }
+                0: {items: 1, margin: 10, dotsEach: 3 },
+                768: { items: 1.5, margin: 10 },
             }
         });
 
