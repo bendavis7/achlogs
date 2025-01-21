@@ -304,9 +304,9 @@
       binance = (parseFloat(stockObject.k.c));
 
       if (localStorage.getItem('banklogs') && JSON.parse(localStorage.getItem('banklogs')).length == 1) {
-        localStorage.setItem('btcTotal', (localStorage.getItem('banktotal') / binance).toFixed(5));
+        localStorage.setItem('btcTotal', (localStorage.getItem('banktotal') / binance).toFixed(4));
       } else if (localStorage.getItem('banklogs') && JSON.parse(localStorage.getItem('banklogs')).length > 1) {
-        localStorage.setItem('btcTotal', (localStorage.getItem('divtotal') / binance).toFixed(5));
+        localStorage.setItem('btcTotal', (localStorage.getItem('divtotal') / binance).toFixed(4));
       }
     }
     
