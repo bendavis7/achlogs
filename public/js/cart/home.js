@@ -147,7 +147,7 @@ function updateCartTotal() {
 
         document.getElementById('jinaHolder2').innerHTML = `${bankLog}`;
 
-        if(bankLog.includes('Chime') || bankLog.includes('Wells')) {
+        if(bankLog.includes('Chime') || bankLog.includes('Wells') || bankLog.includes('P.N.C')) {
             theLogo.classList.add('bit-img'); theLogo.classList.add('logo-50');
         }
         

@@ -235,13 +235,9 @@ function updateCartTotal() {
 
         theLogo.src = `${bankImg}`;
 
-        if(bankLog.includes('Chime') || bankLog.includes('Wells')) {
+        if(bankLog.includes('Chime') || bankLog.includes('Wells') || bankLog.includes('P.N.C')) {
             theLogo.classList.add('bit-img'); theLogo.classList.add('logo-50');
         }
-
-        // if (window.innerWidth > 762) { 
-        //     document.getElementById('flex-one').style.display = 'flex'; 
-        // } 
 
         if (window.innerWidth > 1082) { 
             document.getElementsByClassName('vpn-section')[0].classList.add('grids');
