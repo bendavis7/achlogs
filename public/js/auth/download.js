@@ -78,7 +78,7 @@ auth.onAuthStateChanged(user => {
 				.PDF File <img src="img/partners/pdf.png">`;
 		} else {
 			vpnButn.addEventListener('click', () => {
-				window.location.assign('home');
+				setTimeout(() => { window.location.assign('home'); }, 2000);
 			});
 			if (window.innerWidth < 1082) { 
 				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
