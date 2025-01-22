@@ -460,24 +460,22 @@ hr.hr-2 {
   }
 }
 
-
 .vpn-section.grids {
   display: grid !important;
 }
-
 
 div.col-xl-2 {
   z-index: 9999 !important;
 }
 @media screen and (max-width: 767px) {
   div#chart-div {
-    margin-top: -237px !important; 
-    margin-right: -37px !important;
+    margin-top: -10px !important; 
+    margin-bottom: 0px !important;
+    opacity: 0.8 !important;
   }
   #chart4 {
-    margin-top: 18px !important;
+    margin-top: 25px !important;
   }
-
   .col-80 {
     -ms-flex:0 0 80%;
     flex:0 0 80%;
