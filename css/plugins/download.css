@@ -460,25 +460,30 @@ hr.hr-2 {
   }
 }
 
+
 .vpn-section.grids {
   display: grid !important;
 }
+
 
 div.col-xl-2 {
   z-index: 9999 !important;
 }
 @media screen and (max-width: 767px) {
   div#chart-div {
-    margin-top: -10px !important; 
-    margin-bottom: 0px !important;
-    opacity: 0.8 !important;
+    margin-top: -205px !important; 
+    margin-right: -30px !important;
   }
   #chart4 {
-    margin-top: 25px !important;
+    margin-top: 10px !important;
   }
+  #chart3 {
+    margin-top: -30px !important;
+  }
+
   .col-80 {
-    -ms-flex:0 0 80%;
-    flex:0 0 80%;
-    max-width: 80%;
+    -ms-flex:0 0 75%;
+    flex:0 0 75%;
+    max-width: 75%;
   }  
 }
