@@ -68,7 +68,7 @@
       let itemz = [];
   
       let coBoa = "rgba(3, 169, 245, 0.85)";
-      let coChase = "rgba(200, 115, 173, 0.85)";
+      let coChase = "rgba(10, 150, 143, 0.85)";
       let coChime = "rgba(1, 188, 103, 0.85)";
       let coCiti = "rgba(250, 183, 2, 0.85)";
       let coHunt = "rgba(208, 173, 85, 0.85)";
