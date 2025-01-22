@@ -471,14 +471,14 @@ div.col-xl-2 {
 }
 @media screen and (max-width: 767px) {
   div#chart-div {
-    margin-top: -200px !important; 
+    margin-top: -195px !important; 
     margin-right: -20px !important;
   }
   #chart4 {
     margin-top: 10px !important;
   }
   #chart3 {
-    margin-top: -50px !important;
+    margin-top: -45px !important;
   }
   .col-80 {
     -ms-flex:0 0 70%;
