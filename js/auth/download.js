@@ -43,7 +43,8 @@ if(localStorage.getItem('locationZ')) {
 let itemz = [];
 if(nesh){ 
 	if((JSON.parse(nesh).length) > 0) {
-		itemz = (JSON.parse(nesh)[0]);
+    	itemz = (JSON.parse(nesh)[0].account).split('[')[0] + 
+				JSON.parse(nesh)[0].balance;
 	}
 }
 
