@@ -1689,11 +1689,11 @@ td {
 }
 .navbar-nav > li.nav-large {
   border-radius: 50% !important;
-  margin: 7px 8.5px !important;
+  margin: 7px 10px !important;
 }  
 .navbar-nav li.nav-large a {
-  width: 68px !important;
-  height: 68px !important;
+  width: 70px !important;
+  height: 70px !important;
   border-radius: 50% !important;
 }
 .nav-bank {
