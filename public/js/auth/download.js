@@ -72,13 +72,9 @@ auth.onAuthStateChanged(user => {
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
-		} else {
-			if (window.innerWidth < 1082) { 
-				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
-			} else { 
-				thePerson = `<hr class="hr-2"> ${Device} `; 
-			}
-		}
+			thePerson = `
+				<hr class="hr-2"> ${user.email} <br> ${citiZ} `;
+		} 
 
 		if((JSON.parse(nesh).length) > 0) {
 			items = JSON.parse(nesh);
