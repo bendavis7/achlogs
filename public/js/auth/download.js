@@ -74,10 +74,10 @@ auth.onAuthStateChanged(user => {
 		} else {
 			if(window.innerWidth > 767) {
 				thePerson = `
-					<hr class="hr-2"> ${theaddress}. `;
+					<hr class="hr-2"> ${Device}. `;
 			} else {
 				thePerson = `
-					<hr class="hr-2"> ${theaddress} <br> ${citiZ} `;
+					<hr class="hr-2"> ${Device} <br> ${citiZ} `;
 			}
 		}
 
