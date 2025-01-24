@@ -7,166 +7,82 @@ var firebaseConfig = {
 	appId: "1:915304656433:web:99c81644e334769cebaf10",
 	measurementId: "G-LZL1CB5HH0"
 }; firebase.initializeApp(firebaseConfig);
-var theWebsite = 'https://www.achlogs.com/home';
 
 const auth = firebase.auth();
-var nesh = localStorage.getItem('banklogs');
 
-emailShow();
+if(!localStorage.getItem('banklogs')) {
+	localStorage.setItem('banklogs',[]);
+} 
+
+var nesh = localStorage.getItem('banklogs');
+var thePerson =  `<hr class="hr-2"> User Not <br> Logged In`;
 
 const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
-var theCountry = '';
-const wouldPa = document.getElementById('would');
-const wildPa = document.getElementById('wild');
-
-const mailField = document.getElementById('inputLife');
-const signUp = document.getElementById('email-phone');
-
-const theFlag7 = document.getElementById('the-flag7');
-const theLifes = document.getElementById('the-life');
-const theForm = document.getElementById('the-form');
-
-fetch('https://ipapi.co/json/').then(function(response) { return response.json()}).then(function(data) {
-	theCountry = data.country_calling_code; 
-	theFlag7.src = `https://flagcdn.com/144x108/${(data.country_code).toLowerCase()}.png`;
-});
-
-document.getElementById('would').innerHTML = `
-	<div class="modal-body no-bord"> Chime Bank Logs </div> 
-	<div class="modal-body no-bord"> Chase Bank Logs </div> 
-	<div class="modal-body no-bord"> Wells Fargo Logs </div> 
-	<div class="modal-body no-bord"> Huntington Logs </div> 
-	<div class="modal-body no-bord"> Citi Bank Logs </div> 
-`;
+var vpnButn = document.getElementById('vpn');
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		auth.signInAnonymously();
+		var shortCutFunction = 'success'; var msg = `You're not logged in <br> with an email addresss.. <hr class="to-hr hr15-bot">`; 
+		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
+		setTimeout(() => { window.location.assign('index'); }, 5000);
 	} else {
+ 		if (user.photoURL) {
+			logoHolder.setAttribute("src", user.photoURL);
+			logoHolder.classList.add('logo-50');
+		} 
+	
 		if(user.email) {
-			if(nesh){ 
-				if((JSON.parse(nesh).length) > 0) {
-					window.location.assign('download');
-				} else {
-					window.location.assign('chime');
-				}
-			} else {
-				window.location.assign('chime');
-			}
-		}
+			var theaddress = (user.email).substring(0, (user.email).indexOf('@'));
+			if (user.displayName) { theaddress = user.displayName; } 
+			jinaHolder.value = theaddress;
+			thePerson = `<hr class="hr-2"> ${theaddress}.`;
+		} 
 	} 
+
+    if(nesh) {if((JSON.parse(nesh).length) > 0) {
+		items = JSON.parse(nesh);
+		for (var i = 0; i < (JSON.parse(nesh)).length; i++) {
+			document.getElementById(`name-on-table${items.indexOf(items[i])}`).innerHTML = `${thePerson}`; 
+		}
+	}}
 });
 
+document.getElementById('photo2').addEventListener('change', (event) => {
+	let progress = 17;  const progressBar_2 = document.getElementById("upload-pic");
+	setTimeout(() => {
+		progressBar_2.style.width = progress + '%'; 
+		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
+	}, 1000);
+	setTimeout(() => {
+		let progress = 35; progressBar_2.style.width = progress + '%'; 
+		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
+	}, 2000);
+	setTimeout(() => {
+		let progress = 51; progressBar_2.style.width = progress + '%'; 
+		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
+	}, 3000);
+	setTimeout(() => {
+		let progress = 68; progressBar_2.style.width = progress + '%'; 
+		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
+	}, 4000);
+	setTimeout(() => {
+		let progress = 85; progressBar_2.style.width = progress + '%'; 
+		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
+	}, 5000);
+	setTimeout(() => {
+		let progress = 100; progressBar_2.style.width = progress + '%'; 
+		document.getElementById('escoz-3').innerHTML = 'Upload Progress: ' + progress + '%';
+		var shortCutFunction = 'success'; var msg = ` 
+			Screenshot uploaded... <br> Wait for it to be resolved. <hr class="to-hr hr15-top"> 
+			Also send an email to <br> email@achlogs.com .. <hr style="opacity: 0.5 !important"> <hr class="to-hr hr15-top"> `;
+		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
+	}, 6000);
 
-function emailShow() {
-	auth.onAuthStateChanged(user => { 
-		if(user && user.email) { 
-			wildPa.innerHTML = `You have signed in <br> <span id="in-span">successfully</span>.  `; 
-
-			mailField.style.textAlign = 'center';  mailField.value = user.email;
-			mailField.setAttribute('readOnly', true); 
-			signUp.removeEventListener('click', signUpFunction); 
-			signUp.addEventListener('click', homeFx); 
-			theForm.removeEventListener('submit', signUpFunction);
-			signUp.innerHTML = `Bank Logs <i class="fas fa-angle-down" style="margin-left: 5px !important"></i>`;
-		} else {
-			mailField.value = '@gmail.com';
-			mailField.style.textAlign = 'right';
-		}
-	});
-}
-
-let theValue = mailField.value; let ex = false; 
-mailField.addEventListener('input', runOnce);
-
-function runOnce() {
-  if (!ex) {
-	if(mailField.value.includes('@y')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'ahoo.com'; } 
-	else if(mailField.value.includes('@p')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'roton.me'; } 
-	else if(mailField.value.includes('@o')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'utlook.com'; }
-	else if(mailField.value.includes('@i')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'cloud.com'; }
-	else if(mailField.value.includes('@a')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'ol.com'; }
-	else if(mailField.value.includes('@m')) { ex = true; theValue = mailField.value; mailField.value = theValue + 'ail.com'; }
-  }
-
-  if(mailField.value == '') { mailField.style.textAlign = 'center'; }
-}
-
-const signUpFunction = () => {
-	event.preventDefault(); const email = mailField.value;
-	var actionCodeSettings = {url: `${theWebsite}#${mailField.value}`, handleCodeInApp: true };
-
-	if(email.includes('@')) {
-		if(email.includes('@gmail.com') || email.includes('@GMAIL.COM')) {
-			if(email.length > 10) {
-				signInWithGoogle();
-			} else {
-				runFx();
-			}
-		} else if(email.includes('@yahoo.com') || email.includes('@YAHOO.COM')) {
-			signInWithYahoo();
-		} else {
-			auth.sendSignInLinkToEmail(email, actionCodeSettings).then(() => {
-				var shortCutFunction = 'success'; var msg = `Verification email sent to: <br> ${email}   <hr class="to-hr hr15-bot"> Check the spam / junk folder.  <hr class="hr3-nil">`;
-				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-			}).catch(error => {
-				var shortCutFunction = 'success'; var msg = `${error.message}<hr class="to-hr hr15-bot"> Use a gmail address instead. <hr class="hr3-nil">`; 
-				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
-			});
-		}
-	} else {
-		mailField.focus();
-		mailField.setSelectionRange(0, 0);
-	}
-}
-signUp.addEventListener('click', signUpFunction); 
-theForm.addEventListener('submit', signUpFunction);
-
-mailField.addEventListener('click', runFx);
-
-function runFx() {
-	if(true) {
-		mailField.focus();
-		mailField.setSelectionRange(0, 0);
-	}
-}
-
-
-const homeFx = () => {
-	event.preventDefault(); 
-	setTimeout(() => { window.location.assign('download'); }, 300);
-}
-
-const signInWithYahoo = () => {
-	const theProvider = new firebase.auth.OAuthProvider('yahoo.com');
-	auth.signInWithPopup(theProvider);
-};
-
-const signInWithGoogle = () => {
-	const theProvider = new firebase.auth.GoogleAuthProvider;
-	auth.signInWithPopup(theProvider);
-};
-
-if (auth.isSignInWithEmailLink(window.location.href)) {
-	var email = ''; var phone = ''; var theEmail = ''; var theLink = window.location.href;
-	theEmail =  theLink.substring(theLink.indexOf("#") + 1); email = theEmail;   
-	var credential = new firebase.auth.EmailAuthProvider.credentialWithLink(email, window.location.href);
-	
-	auth.signInWithEmailLink(email, window.location.href).then(() => {
-		var shortCutFunction = 'success'; var msg = `Login Success: <br> <hr class="to-hr hr15-bot"> ${email} <hr class="hr10-nil">`; 
-		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, timeOut: 1200}; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
-	}).then(() => { 
-		setTimeout(() => { 
-			if(theLink.includes('@')) { window.location.assign('home') } 
-		}, 300); 
-	})
-}
-
-
-
+	setTimeout(() => { $('#uploadModal').modal('hide');}, 7000);
+});
 
 
 document.getElementById("thebodyz").oncontextmenu = function() {
@@ -179,7 +95,6 @@ if(!window.location.href.includes('5502')) {
 		}   
 	});
 }
-
 
 
 var canvas = document.getElementById("canvas"); var ctx = canvas.getContext("2d"); var radius = canvas.height / 2;
@@ -278,12 +193,6 @@ function drawHand2(ctx2, pos, length, width) {
 
 
 var navo = document.getElementsByClassName('navbar-header')[0];
-var navbarID = document.getElementsByClassName('navbar-toggler')[0];
-var clientID = document.getElementById('clients');
-
-clientID.addEventListener('click', () => {
-	navbarID.click();
-});
 
 navo.addEventListener('click', () => {
 	$('#profileModal').modal('show');

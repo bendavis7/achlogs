@@ -112,9 +112,6 @@ if(localStorage.getItem('banklogs')){
 
         thetotS.addEventListener('click', ()=> { 
             document.getElementById('modem').click(); });
-
-        document.getElementById('vpn').addEventListener('click', ()=> { 
-            document.getElementById('modem').click(); });
         
         document.getElementById('the-logs').addEventListener('click', ()=> { 
             document.getElementById('modem').click(); });
