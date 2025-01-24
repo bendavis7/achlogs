@@ -36,8 +36,8 @@
         "destination": "/chase.html"
       },
       {
-        "source": "/chime",
-        "destination": "/chime.html"
+        "source": "/chimes",
+        "destination": "/chimes.html"
       },
       {
         "source": "/citi",
@@ -105,8 +105,8 @@
         "type": 301
       },
       {
-        "source": "/chime.html",
-        "destination": "/chime",
+        "source": "/chimes.html",
+        "destination": "/chimes",
         "type": 301
       },
       {
