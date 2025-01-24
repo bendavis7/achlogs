@@ -3,6 +3,13 @@
     padding: 0 10px !important;
 }
 
+@media screen and (max-width: 874px) {
+  #logs-invoice {
+    height: 100% !important;
+    padding: 0 10px !important;
+  }
+}
+
   #logs-invoice div {
     overflow: hidden !important;
   }
@@ -13,18 +20,7 @@
     width: 100% !important;
   }
   #invoice-div {
-    margin-top: 12vh;
-  }
-
-  @media screen and (max-width: 874px) {
-    #invoice-div {
-      margin-top: 12vh;
-    }  
-
-    #logs-invoice {
-      height: 100% !important;
-      padding: 0 10px !important;
-    }
+    margin-top: 12.5vh;
   }
   
   #invoice-div p {
@@ -257,7 +253,7 @@
     }
   
     #section-in {
-        margin: 20px auto 10px !important;
+        margin: 25px auto 10px !important;
     }
   
     p#would {

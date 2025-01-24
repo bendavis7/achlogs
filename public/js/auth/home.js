@@ -7,7 +7,7 @@ var firebaseConfig = {
 	appId: "1:915304656433:web:99c81644e334769cebaf10",
 	measurementId: "G-LZL1CB5HH0"
 }; firebase.initializeApp(firebaseConfig);
-var theWebsite = 'https://www.achlogs.com/index';
+var theWebsite = 'https://www.achlogs.com/home';
 
 const auth = firebase.auth();
 
