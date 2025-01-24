@@ -26,9 +26,6 @@ var thePerson = '';
 var nesh = localStorage.getItem('banklogs');
 var vpnButn = document.getElementById('vpn');
 
-var navo = document.getElementsByClassName('navbar-header')[0];
-var navbarTo = document.getElementsByClassName('navbar-toggler')[0];
-
 const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById("jinaHolder");
 const jinaHolder2 = document.getElementById('jinaHolder2');
@@ -334,9 +331,3 @@ function drawHand2(ctx2, pos, length, width) {
 	ctx2.beginPath(); ctx2.lineWidth = width; ctx2.lineCap = "round"; ctx2.moveTo(0, 0);
 	ctx2.rotate(pos); ctx2.lineTo(0, -length); ctx2.stroke(); ctx2.rotate(-pos);
 }
-
-
-
-navo.addEventListener('click', () => {
-	window.location.assign('index');
-});
