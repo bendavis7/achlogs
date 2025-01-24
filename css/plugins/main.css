@@ -2350,7 +2350,7 @@ margin-bottom: 2px !important;
 .toast {
   max-width: 350px;
   overflow: hidden;
-  font-size: 16px;
+  font-size: 17px;
   background-color: rgba(255, 255, 255, 0.85);
   background-clip: padding-box;
   border: 1.5px solid rgba(0, 0, 0, 0.1);
@@ -2362,15 +2362,6 @@ margin-bottom: 2px !important;
   margin-top: 15px !important;
   margin-right: 15px !important;
 }
-@media screen and (max-width: 502px) {
-  .toast {
-    max-width: 345px;
-    font-size: 17px;
-    margin-top: 15px !important;
-    margin-right: 15px !important;
-  }
-}
-
 
 .toast hr {
   border-width: 2px !important;
