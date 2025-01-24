@@ -158,10 +158,6 @@ auth.onAuthStateChanged(user => {
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
 
-	vpnButn.addEventListener('click', () => {
-		setTimeout(() => { generatePDF(); }, 2000);
-	});
-
 	function generatePDF() {
 		var pdfObject = jsPDFInvoiceTemplate.default(props);
 		console.log("Object created", pdfObject);
@@ -235,7 +231,7 @@ auth.onAuthStateChanged(user => {
 					bankLog, bankBal,banking1, banking2,banking3,banking4,banking5,'$' + total,
 				])),
 				invDescLabel: "Payment Status: PENDING",
-				invDesc: "Bitcoin address: ' 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp ',  For queries with your payment, send a receipt to 'email@achlogs.com' ",
+				invDesc: "Bitcoin address: ' 1AMjPsZQvqeAfnEjfk17fEUZc6rZuM9Ccp ' ",
 			},
 			footer: { text: "Copyright © Ach Logs -:- 2025", }, pageEnable: true, pageLabel: "Page ",
 		};
