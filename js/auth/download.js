@@ -73,7 +73,7 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
 			thePerson = `
-				<hr class="hr-2"> ${user.email} <br> ${citiZ} `;
+				<hr class="hr-2"> ${theaddress} <br> ${citiZ} `;
 		} 
 
 		if((JSON.parse(nesh).length) > 0) {
