@@ -13,13 +13,18 @@
     width: 100% !important;
   }
   #invoice-div {
-    margin-top: 1vh;
+    margin-top: 12vh;
   }
 
   @media screen and (max-width: 874px) {
     #invoice-div {
-      margin-top: 6vh;
+      margin-top: 12vh;
     }  
+
+    #logs-invoice {
+      height: 100% !important;
+      padding: 0 10px !important;
+    }
   }
   
   #invoice-div p {
@@ -268,10 +273,4 @@
     margin-bottom: 0px !important;
     border-radius: 2px !important;
     border: 2px dashed rgba(73, 192, 208, 0.1) !important;
-  }
-
-
-  #clients {
-    position: fixed !important;
-    bottom: 3px !important;
   }
