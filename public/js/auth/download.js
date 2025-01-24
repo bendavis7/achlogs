@@ -43,8 +43,7 @@ if(localStorage.getItem('locationZ')) {
 let itemz = [];
 if(nesh){ 
 	if((JSON.parse(nesh).length) > 0) {
-    	itemz = (JSON.parse(nesh)[0].account).split('[')[0] + 
-				JSON.parse(nesh)[0].balance;
+    	itemz = (JSON.parse(nesh)[0]);
 	}
 }
 
@@ -136,13 +135,7 @@ auth.onAuthStateChanged(user => {
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 					} 
 				});
-			} else {
-				setTimeout(() => { generatePDF(); }, 7500);
-				var shortCutFunction = 'success';  var msg = ` 
-					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.      <hr class="to-hr hr15-top"> 
-						Logins can be sent as a <br> .PDF file or via EMAIL..         <hr class="hr15-top"> `;
-				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-			}
+			} 
 
 			var docRef = db.collection("users").doc(theGuy);
 			docRef.get().then((doc) => {
@@ -157,6 +150,13 @@ auth.onAuthStateChanged(user => {
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
+
+
+	vpnButn.addEventListener('click', ()=> { 
+		setTimeout(() => {
+			generatePDF();
+		}, 2000);
+	});
 
 	function generatePDF() {
 		var pdfObject = jsPDFInvoiceTemplate.default(props);

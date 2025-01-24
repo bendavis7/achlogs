@@ -39,10 +39,6 @@ auth.onAuthStateChanged(user => {
 			if (user.displayName) { theaddress = user.displayName; } 
 			jinaHolder.value = theaddress;
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
-
-			vpnButn.removeAttribute('href');
-			vpnButn.addEventListener('click', () => { 
-				$('#profileModal').modal('show'); });   
 		} 
 	} 
 
