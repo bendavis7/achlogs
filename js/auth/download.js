@@ -162,9 +162,7 @@ auth.onAuthStateChanged(user => {
 			if(user.email) {
 				setTimeout(() => { generatePDF(); }, 2000);
 			} else {
-				setTimeout(() => {
-					window.location.assign('home');
-				}, 2000);
+				setTimeout(() => { signUpFunction(); }, 2000);
 			}
 		});
 	});
