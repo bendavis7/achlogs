@@ -54,7 +54,7 @@ auth.onAuthStateChanged(user => {
 	if(!user) { 
 		var shortCutFunction = 'success'; var msg = `You're not logged in <br> with an email addresss.. <hr class="to-hr hr15-bot">`; 
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
-		setTimeout(() => { window.location.assign('home'); }, 4000);
+		setTimeout(() => { window.location.assign('home'); }, 5000);
 	} else {
 		if (user.photoURL) {
 			logoHolder.setAttribute("src", user.photoURL); 
@@ -71,6 +71,10 @@ auth.onAuthStateChanged(user => {
 			theGuy = user.email;
 			thePerson = `<hr class="hr-2"> ${theaddress} <br> ${citiZ} `;
 		} else {
+			var shortCutFunction = 'success'; var msg = `You're not logged in <br> with an email addresss.. <hr class="to-hr hr15-bot">`; 
+			toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
+			setTimeout(() => { window.location.assign('home'); }, 5000);
+
 			if(window.innerWidth > 767) {
 				thePerson = `<hr class="hr-2"> ${Device}. `;
 			} else {
@@ -123,20 +127,20 @@ auth.onAuthStateChanged(user => {
 					var shortCutFunction = 'success'; var msg = ` 
 						Logins will be sent to.. <br> ${user.email}                 <hr class="to-hr hr15-top"> 
 						Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
-					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
+					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 				} else { 
-					setTimeout(() => { generatePDF(); }, 6000);
+					setTimeout(() => { generatePDF(); }, 7000);
 					var shortCutFunction = 'success';  var msg = ` 
 						${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 						Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
-					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 				} });
 			} else {
-				setTimeout(() => { window.location.assign('home'); }, 6000);
+				setTimeout(() => { generatePDF(); }, 7000);
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.     <hr class="to-hr hr15-top"> 
 					Logins can be sent as a <br> PDF File or via EMAIL ..           <hr class="hr15-top"> `;
-				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			} 
 
 			var docRef = db.collection("users").doc(theGuy);
@@ -148,7 +152,7 @@ auth.onAuthStateChanged(user => {
 				}
 			});
 
-			setTimeout(() => { $('#exampleModal').modal('hide'); }, 4000);
+			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
@@ -156,17 +160,8 @@ auth.onAuthStateChanged(user => {
 	vpnButn.addEventListener('click', () => {
 		setTimeout(() => { generatePDF(); }, 5000);
 		var shortCutFunction = 'success'; var msg = `
-			Generating PDF...    <br> Payment Status: Pending    <hr class="to-hr hr15-bot">`; 
+			Generating PDF...    <br> BTC Payment: Pending.  <hr class="to-hr hr15-bot">`; 
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
-	
-		var docRef = db.collection("users").doc(theGuy);
-		docRef.get().then((doc) => {
-			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ PdfFile: true }) 
-			} else { 
-				return db.collection('users').doc(theGuy).update({ PdfFile: true }) 
-			}
-		});
 	});
 
 	function generatePDF() {
