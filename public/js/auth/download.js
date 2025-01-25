@@ -153,8 +153,11 @@ auth.onAuthStateChanged(user => {
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
 
-
-	vpnButn.addEventListener('click', generatePDF);
+	vpnButn.addEventListener('click', () => {
+		setTimeout(() => {
+			generatePDF();
+		}, 2000);
+	})
 
 	function generatePDF() {
 		var pdfObject = jsPDFInvoiceTemplate.default(props);
