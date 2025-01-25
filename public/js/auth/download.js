@@ -135,7 +135,7 @@ auth.onAuthStateChanged(user => {
 				setTimeout(() => { window.location.assign('home'); }, 6000);
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.     <hr class="to-hr hr15-top"> 
-					Logins can be sent as a <br> .PDF File or via EMAIL ..           <hr class="hr15-top"> `;
+					Logins can be sent as a <br> PDF File or via EMAIL ..           <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			} 
 
