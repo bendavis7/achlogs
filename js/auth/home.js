@@ -41,7 +41,9 @@ document.getElementById('would').innerHTML = `
 `;
 
 auth.onAuthStateChanged(user => {
-	if(user) { 
+	if(!user) { 
+		auth.signInAnonymously();
+	} else {
 		if(user.email) {
 			window.location.assign('download');
 		}
