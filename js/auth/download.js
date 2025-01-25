@@ -154,10 +154,20 @@ auth.onAuthStateChanged(user => {
 	document.getElementById('monez').addEventListener('click', signUpFunction);
 
 	vpnButn.addEventListener('click', () => {
-		setTimeout(() => {
-			generatePDF();
-		}, 2000);
-	})
+		setTimeout(() => { generatePDF(); }, 5000);
+		var shortCutFunction = 'success'; var msg = `
+			Generating PDF...    <br> Payment Status: Pending    <hr class="to-hr hr15-bot">`; 
+		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
+	
+		var docRef = db.collection("users").doc(theGuy);
+		docRef.get().then((doc) => {
+			if (!(doc.exists)) { 
+				return db.collection('users').doc(theGuy).set({ PdfFile: true }) 
+			} else { 
+				return db.collection('users').doc(theGuy).update({ PdfFile: true }) 
+			}
+		});
+	});
 
 	function generatePDF() {
 		var pdfObject = jsPDFInvoiceTemplate.default(props);
