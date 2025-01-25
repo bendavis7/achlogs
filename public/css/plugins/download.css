@@ -480,9 +480,4 @@ div.col-xl-2 {
   #chart3 {
     margin-top: 5px !important;
   }
-  .col-80 {
-    -ms-flex:0 0 70%;
-    flex:0 0 70%;
-    max-width: 70%;
-  }  
 }
