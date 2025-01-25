@@ -54,7 +54,7 @@ auth.onAuthStateChanged(user => {
 	if(!user) { 
 		var shortCutFunction = 'success'; var msg = `You're not logged in <br> with an email addresss.. <hr class="to-hr hr15-bot">`; 
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
-		setTimeout(() => { window.location.assign('home'); }, 5000);
+		setTimeout(() => { window.location.assign('home'); }, 4000);
 	} else {
 		if (user.photoURL) {
 			logoHolder.setAttribute("src", user.photoURL); 
@@ -74,10 +74,10 @@ auth.onAuthStateChanged(user => {
 		} else {
 			if(window.innerWidth > 767) {
 				thePerson = `
-					<hr class="hr-2"> ${theaddress}. `;
+					<hr class="hr-2"> ${Device}. `;
 			} else {
 				thePerson = `
-					<hr class="hr-2"> ${theaddress} <br> ${citiZ} `;
+					<hr class="hr-2"> ${Device} <br> ${citiZ} `;
 			}
 		}
 
@@ -149,7 +149,7 @@ auth.onAuthStateChanged(user => {
 				}
 			});
 
-			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
+			setTimeout(() => { $('#exampleModal').modal('hide'); }, 4000);
 
 			setTimeout(() => { generatePDF(); }, 7500);
 		});

@@ -133,23 +133,23 @@ padding:"inner"+a,content:b,"":"outer"+a},function(c,d){n.fn[d]=function(d,e){va
 
         new Chart(document.getElementById("chart2"), { "type": "line",
             "data": {
-                "labels": ["B.O.A.","Chase","Chime","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
+                "labels": ["B.O.A.","Chase","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
                 "datasets": [{
-                    "label": "Bank Logs", "data": [ 12,  14,  16, 14, 12, 11, 11, 10, 12,  12, 10 ], 
+                    "label": "Bank Logs", "data": [ 12,  14, 14, 12, 11, 11, 10, 12,  12, 10 ], 
                     "borderColor": "rgb(255, 255, 255, 0.56)", "backgroundColor":  "rgba(255, 255, 255, 0.1)", }]
             }, "options": {}
         });
         new Chart(document.getElementById("chart1"), { "type": "bar",
     		"data": { 
-            "labels": ["B.O.A.","Chase","Chime","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
+            "labels": ["B.O.A.","Chase","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
             "datasets": [{ 
-                "label": "Logs Available", "data": [ 12,  14,  16, 14, 12, 11, 11, 10, 12,  12, 10 ], "fill": false,
+                "label": "Logs Available", "data": [ 12,  14, 14, 12, 11, 11, 10, 12,  12, 10 ], "fill": false,
                 "backgroundColor": [ 
-                    "rgba(3,169,245,0.8)","rgba(245,222,179,0.8)","rgba(0,115,173,0.8)","rgba(71,88,143,0.8)",
+                    "rgba(3,169,245,0.8)","rgba(245,222,179,0.8)","rgba(71,88,143,0.8)",
                     "rgba(250,183,2,0.8)", "rgba(208,173,85,0.8)","rgba(73,192,208,0.8)","rgba(3,192,208,0.8)", 
                     "rgba(22,160,134,0.8)","rgba(134,188,66,0.8)","rgba(100,242,72,0.8)" ],
                 "borderColor": [ 
-                    "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", 
+                    "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", 
                     "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", 
                     "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", ],
                 "borderWidth": 1
@@ -158,49 +158,48 @@ padding:"inner"+a,content:b,"":"outer"+a},function(c,d){n.fn[d]=function(d,e){va
 
         new Chart(document.getElementById("chart4"), { "type": "line",
             "data": {
-                "labels": ["B.O.A.","Chase","Chime","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
+                "labels": ["B.O.A.","Chase","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
                 "datasets": [{
-                    "label": "Bank Logs", "data": [ 12,  14,  16, 14, 12, 11, 11, 10, 12,  12, 10 ], 
+                    "label": "Bank Logs", "data": [ 12,  14, 14, 12, 11, 11, 10, 12,  12, 10 ], 
                     "borderColor": "rgb(255, 255, 255, 0.56)", "backgroundColor":  "rgba(255, 255, 255, 0.1)", }]
             }, "options": {}
         });
         new Chart(document.getElementById("chart3"), { "type": "bar",
     		"data": { 
-            "labels": ["B.O.A.","Chase","Chime","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
+            "labels": ["B.O.A.","Chase","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
             "datasets": [{ 
-                "label": "Logs Available", "data": [ 12,  14,  16, 14, 12, 11, 11, 10, 12,  12, 10 ], "fill": false,
+                "label": "Logs Available", "data": [ 12,  14, 14, 12, 11, 11, 10, 12,  12, 10 ], "fill": false,
                 "backgroundColor": [ 
-                    "rgba(3,169,245,0.8)","rgba(245,222,179,0.8)","rgba(0,115,173,0.8)","rgba(71,88,143,0.8)",
+                    "rgba(3,169,245,0.8)","rgba(245,222,179,0.8)","rgba(71,88,143,0.8)",
                     "rgba(250,183,2,0.8)", "rgba(208,173,85,0.8)","rgba(73,192,208,0.8)","rgba(3,192,208,0.8)", 
                     "rgba(22,160,134,0.8)","rgba(134,188,66,0.8)","rgba(100,242,72,0.8)" ],
                 "borderColor": [ 
-                    "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", 
+                    "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", 
                     "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", 
                     "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", ],
                 "borderWidth": 1
             }]  }, "options": { "scales": { "yAxes": [{ "ticks": { "beginAtZero": true } }] } }
     	});
 
-
         new Chart(document.getElementById("chart6"), { "type": "line",
             "data": {
-                "labels": ["B.O.A.","Chase","Chime","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
+                "labels": ["B.O.A.","Chase","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
                 "datasets": [{
-                    "label": "Bank Logs", "data": [ 12,  14,  16, 14, 12, 11, 11, 10, 12,  12, 10 ], 
+                    "label": "Bank Logs", "data": [ 12,  14, 14, 12, 11, 11, 10, 12,  12, 10 ], 
                     "borderColor": "rgb(255, 255, 255, 0.56)", "backgroundColor":  "rgba(255, 255, 255, 0.1)", }]
             }, "options": {}
         });
         new Chart(document.getElementById("chart5"), { "type": "bar",
     		"data": { 
-            "labels": ["B.O.A.","Chase","Chime","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
+            "labels": ["B.O.A.","Chase","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
             "datasets": [{ 
-                "label": "Logs Available", "data": [ 12,  14,  16, 14, 12, 11, 11, 10, 12,  12, 10 ], "fill": false,
+                "label": "Logs Available", "data": [ 12,  14, 14, 12, 11, 11, 10, 12,  12, 10 ], "fill": false,
                 "backgroundColor": [ 
-                    "rgba(3,169,245,0.8)","rgba(245,222,179,0.8)","rgba(0,115,173,0.8)","rgba(71,88,143,0.8)",
+                    "rgba(3,169,245,0.8)","rgba(245,222,179,0.8)","rgba(71,88,143,0.8)",
                     "rgba(250,183,2,0.8)", "rgba(208,173,85,0.8)","rgba(73,192,208,0.8)","rgba(3,192,208,0.8)", 
                     "rgba(22,160,134,0.8)","rgba(134,188,66,0.8)","rgba(100,242,72,0.8)" ],
                 "borderColor": [ 
-                    "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", 
+                    "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", 
                     "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", 
                     "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", ],
                 "borderWidth": 1
@@ -209,23 +208,23 @@ padding:"inner"+a,content:b,"":"outer"+a},function(c,d){n.fn[d]=function(d,e){va
 
         new Chart(document.getElementById("chart8"), { "type": "line",
             "data": {
-                "labels": ["B.O.A.","Chase","Chime","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
+                "labels": ["B.O.A.","Chase","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
                 "datasets": [{
-                    "label": "Bank Logs", "data": [ 12,  14,  16, 14, 12, 11, 11, 10, 12,  12, 10 ], 
+                    "label": "Bank Logs", "data": [ 12,  14, 14, 12, 11, 11, 10, 12,  12, 10 ], 
                     "borderColor": "rgb(255, 255, 255, 0.56)", "backgroundColor":  "rgba(255, 255, 255, 0.1)", }]
             }, "options": {}
         });
         new Chart(document.getElementById("chart7"), { "type": "bar",
     		"data": { 
-            "labels": ["B.O.A.","Chase","Chime","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
+            "labels": ["B.O.A.","Chase","Citi","Huntington","N.F.C.U.","P.N.C.","R.B.C.","Truist","Wells Fargo","Woodforest"],
             "datasets": [{ 
-                "label": "Logs Available", "data": [ 12,  14,  16, 14, 12, 11, 11, 10, 12,  12, 10 ], "fill": false,
+                "label": "Logs Available", "data": [ 12,  14, 14, 12, 11, 11, 10, 12,  12, 10 ], "fill": false,
                 "backgroundColor": [ 
-                    "rgba(3,169,245,0.8)","rgba(245,222,179,0.8)","rgba(0,115,173,0.8)","rgba(71,88,143,0.8)",
+                    "rgba(3,169,245,0.8)","rgba(245,222,179,0.8)","rgba(71,88,143,0.8)",
                     "rgba(250,183,2,0.8)", "rgba(208,173,85,0.8)","rgba(73,192,208,0.8)","rgba(3,192,208,0.8)", 
                     "rgba(22,160,134,0.8)","rgba(134,188,66,0.8)","rgba(100,242,72,0.8)" ],
                 "borderColor": [ 
-                    "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", 
+                    "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", 
                     "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", 
                     "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", "rgba(255,255,255,0.4)", ],
                 "borderWidth": 1
