@@ -2105,13 +2105,6 @@ ul.countdown li p {
   background: linear-gradient(to bottom, #49c0d0 0%, #121d33 100%) !important;
 }
 
-/* @media screen and (min-width: 507px) {
-  .vpn-section a#tick {
-    display: none !important;
-  }
-} */
-
-
 .change {
   padding: 0;
   margin: 5px 0;
