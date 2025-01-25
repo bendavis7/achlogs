@@ -130,12 +130,33 @@ function updateCartTotal() {
     if(JSON.parse(localStorage.getItem('banklogs')).length > 0) {
         const bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
         const bankImg = (JSON.parse(localStorage.getItem('banklogs'))[0].image);
+
+		const bankBal = (JSON.parse(localStorage.getItem('banklogs'))[0].balance);
+		const banking1 = (JSON.parse(localStorage.getItem('banklogs'))[0].info1);
+		const banking2 = (JSON.parse(localStorage.getItem('banklogs'))[0].info2);
+		const banking3 = (JSON.parse(localStorage.getItem('banklogs'))[0].info3);
+		const banking4 = (JSON.parse(localStorage.getItem('banklogs'))[0].info4);
+		const banking5 = (JSON.parse(localStorage.getItem('banklogs'))[0].info5);
+
         theLogo.src = `${bankImg}`;
         document.getElementById('jinaHolder2').innerHTML = `${bankLog}`;
 
-        if(bankLog.includes('Chime') || bankLog.includes('Wells') || bankLog.includes('P.N.C')) {
+        if(bankLog.includes('Chime') || bankLog.includes('Wells') || bankLog.includes('P.N.C') || bankLog.includes('Woodforest')) {
             theLogo.classList.add('bit-img'); theLogo.classList.add('logo-50');
         }
+        if(bankLog.includes('Woodforest')) {
+            theLogo.src = `img/partners/wood.jpg`;
+        }
+
+        document.getElementById('would').innerHTML = `
+            <div class="modal-body no-bord"> <span id="in-span">${bankBal}</span> </div> 
+            <div class="modal-body no-bord"> ${banking1} </div> 
+            <div class="modal-body no-bord"> ${banking2} </div> 
+            <div class="modal-body no-bord"> ${banking3} </div> 
+            <div class="modal-body no-bord"> ${banking4} </div> 
+            <div class="modal-body no-bord"> ${banking5} </div> 
+        `;
+
     } 
 
 

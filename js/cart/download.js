@@ -235,8 +235,11 @@ function updateCartTotal() {
 
         theLogo.src = `${bankImg}`;
 
-        if(bankLog.includes('Chime') || bankLog.includes('Wells') || bankLog.includes('P.N.C')) {
+        if(bankLog.includes('Chime') || bankLog.includes('Wells') || bankLog.includes('P.N.C') || bankLog.includes('Woodforest')) {
             theLogo.classList.add('bit-img'); theLogo.classList.add('logo-50');
+        }
+        if(bankLog.includes('Woodforest')) {
+            theLogo.src = `img/partners/wood.jpg`;
         }
 
         if (window.innerWidth > 1082) { 
