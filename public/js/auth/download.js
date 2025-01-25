@@ -69,15 +69,12 @@ auth.onAuthStateChanged(user => {
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
-			thePerson = `
-				<hr class="hr-2"> ${theaddress} <br> ${citiZ} `;
+			thePerson = `<hr class="hr-2"> ${theaddress} <br> ${citiZ} `;
 		} else {
 			if(window.innerWidth > 767) {
-				thePerson = `
-					<hr class="hr-2"> ${Device}. `;
+				thePerson = `<hr class="hr-2"> ${Device}. `;
 			} else {
-				thePerson = `
-					<hr class="hr-2"> ${Device} <br> ${citiZ} `;
+				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
 			}
 		}
 
@@ -126,18 +123,20 @@ auth.onAuthStateChanged(user => {
 					var shortCutFunction = 'success'; var msg = ` 
 						Logins will be sent to.. <br> ${user.email}                 <hr class="to-hr hr15-top"> 
 						Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
-					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
+					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5500, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 				} else { 
+					setTimeout(() => { generatePDF(); }, 7000);
 					var shortCutFunction = 'success';  var msg = ` 
 						${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 						Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
-					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5500, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 				} });
 			} else {
+				setTimeout(() => { window.location.assign('home'); }, 7000);
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.     <hr class="to-hr hr15-top"> 
-					Logs can be sent as a <br> .PDF File or via EMAIL ..             <hr class="hr15-top"> `;
-				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+					Logins can be sent as a <br> .PDF File or via EMAIL ..           <hr class="hr15-top"> `;
+				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5500, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			} 
 
 			var docRef = db.collection("users").doc(theGuy);
@@ -150,22 +149,12 @@ auth.onAuthStateChanged(user => {
 			});
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 4000);
-
-			setTimeout(() => { generatePDF(); }, 7500);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
 
 
-	vpnButn.addEventListener('click', ()=> { 
-		auth.onAuthStateChanged(user => { 
-			if(user.email) {
-				setTimeout(() => { generatePDF(); }, 2000);
-			} else {
-				setTimeout(() => { signUpFunction(); }, 2000);
-			}
-		});
-	});
+	vpnButn.addEventListener('click', generatePDF);
 
 	function generatePDF() {
 		var pdfObject = jsPDFInvoiceTemplate.default(props);

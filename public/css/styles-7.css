@@ -453,10 +453,3 @@ span#span {
 }
 
 
-
-
-@media screen and (max-width: 767px) {
-  .vpn-section .butn#pdf {
-     background: rgb(210 239 243) !important;
-  }
-}
