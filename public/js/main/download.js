@@ -74,6 +74,7 @@
       let coHunt = "rgba(208, 173, 85, 0.85)";
       let coNavy = "rgba(22, 160, 134, 0.85)";
       let coPnc = "rgba(134, 188, 66, 0.85)";
+      let coRbc = "rgba(134, 88, 66, 0.85)";
       let coTruist = "rgba(233, 237, 4, 0.85)";
       let coWells = "rgba(148, 235, 148, 0.85)";
       let coWood = "rgba(209, 50, 48, 0.85)";
@@ -122,6 +123,8 @@
             daColor = coWells;
           } else if (daAc.includes('Wood')) {
             daColor = coWood;
+          } else if (daAc.includes('R.B.C')) {
+            daColor = coRbc;
           }
   
           let prevBa = ((itemz[i].balance).replace('Balance: $', ''));
@@ -178,6 +181,8 @@
             daColor = coWells;
           } else if (daAc.includes('Wood')) {
             daColor = coWood;
+          } else if (daAc.includes('R.B.C')) {
+            daColor = coRbc;
           }
   
           let prevBa = ((itemz[i].balance).replace('Balance: $', ''));

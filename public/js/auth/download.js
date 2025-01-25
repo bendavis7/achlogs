@@ -191,6 +191,10 @@ auth.onAuthStateChanged(user => {
 			}
 		}
 
+		if(bankLog.includes('Woodforest')) {
+			bankImg = `img/partners/wood.jpg`;
+        }
+
 		var props = {
 			outputType: jsPDFInvoiceTemplate.OutputType.Save, returnJsPDFDocObject: true,
 			fileName: bankLog + ' ' + bankBal,
