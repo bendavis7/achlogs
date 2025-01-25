@@ -914,11 +914,21 @@ select {
   margin: 3px auto 0;
 }
 td {
-  font-size: 16.2px !important;
-  line-height: 24px !important;
+  font-size: 17px !important;
+  line-height: 30px !important;
   color: #121d33;
   font-weight: 500 !important;
 }
+
+@media screen and (max-width: 1068px) {
+  td {
+    font-size: 16.5px !important;
+    line-height: 25px !important;
+    color: #121d33;
+    font-weight: 500 !important;
+  }
+}
+
 #escoz-3 {
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
