@@ -160,7 +160,7 @@ auth.onAuthStateChanged(user => {
 	vpnButn.addEventListener('click', () => {
 		setTimeout(() => { generatePDF(); }, 5000);
 		var shortCutFunction = 'success'; var msg = `
-			Generating PDF...    <br> BTC Payment: Pending.  <hr class="to-hr hr15-bot">`; 
+			Generating PDF...    <br> BTC Payment: Pending...  <hr class="to-hr hr15-bot">`; 
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
 	});
 
