@@ -71,10 +71,6 @@ auth.onAuthStateChanged(user => {
 			theGuy = user.email;
 			thePerson = `<hr class="hr-2"> ${theaddress} <br> ${citiZ} `;
 		} else {
-			var shortCutFunction = 'success'; var msg = `You're not logged in <br> with an email addresss.. <hr class="to-hr hr15-bot">`; 
-			toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
-			setTimeout(() => { window.location.assign('home'); }, 5000);
-
 			if(window.innerWidth > 767) {
 				thePerson = `<hr class="hr-2"> ${Device}. `;
 			} else {
@@ -148,8 +144,7 @@ auth.onAuthStateChanged(user => {
 				if (!(doc.exists)) { 
 					return db.collection('users').doc(theGuy).set({ download: true }) 
 				} else { 
-					return db.collection('users').doc(theGuy).update({ download: true }) 
-				}
+					return db.collection('users').doc(theGuy).update({ download: true }) }
 			});
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
@@ -160,7 +155,7 @@ auth.onAuthStateChanged(user => {
 	vpnButn.addEventListener('click', () => {
 		setTimeout(() => { generatePDF(); }, 5000);
 		var shortCutFunction = 'success'; var msg = `
-			Generating PDF...    <br> BTC Payment: Pending.  <hr class="to-hr hr15-bot">`; 
+			Generating PDF...    <br> Payment: BTC Not Paid  <hr class="to-hr hr15-bot">`; 
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
 	});
 

@@ -361,14 +361,18 @@ section .dataTables_wrapper dataTables_length {
 
 section .dataTables_wrapper .dataTables_length,
 section .dataTables_wrapper .dataTables_filter {
-  margin: 5px 5px -5px !important;
+  margin: 10px 10px 5px !important;
   letter-spacing: 1px !important;
   word-spacing: 2px !important;
   font-size: 25px !important;
   white-space: nowrap !important;
 }
 section .dataTables_wrapper .dataTables_paginate {
-  margin-top: 5px !important;
+  margin: 10px 10px 5px !important;
+}
+
+section .dataTables_wrapper .dataTables_paginate .paginate_button {
+  font-size: 21px !important;
 }
 
 @media screen and (max-width: 1067px) {
@@ -379,8 +383,7 @@ section .dataTables_wrapper .dataTables_paginate {
     text-align: center;
   }
   section .dataTables_wrapper .dataTables_paginate {
-    margin-top: 8px !important;
-    margin-bottom: 8px !important;
+    margin: 8px !important;
   }
   section .dataTables_wrapper .dataTables_filter {
     display: flex !important;
@@ -403,6 +406,9 @@ section .dataTables_wrapper .dataTables_paginate {
 
   section .dataTables_wrapper .dataTables_filter {
     margin-top: 0px !important;
+  }
+  section .dataTables_wrapper .dataTables_paginate .paginate_button {
+    font-size: 19px !important;
   }
 }
   

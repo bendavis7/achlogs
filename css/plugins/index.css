@@ -201,9 +201,9 @@ opacity: 0 !important;
     -webkit-column-gap: 3px;
     column-gap: 3px;
 
-      -moz-column-count: 12;
-      -webkit-column-count: 12;
-      column-count: 12;
+      -moz-column-count: 14;
+      -webkit-column-count: 14;
+      column-count: 14;
   }
 }
 
