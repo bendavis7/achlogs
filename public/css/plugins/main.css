@@ -2070,7 +2070,7 @@ ul.countdown li p {
   }
   .butn#modem {
     font-size: 21px !important;
-    padding: 10.5px 10.5px !important;
+    padding: 10.5px 11px !important;
   }
 
   #vpn img, #vpn i {
@@ -2086,8 +2086,8 @@ ul.countdown li p {
     margin: 25px auto 40px !important;
   }
   .butn#modem {
-    font-size: 20.4px !important;
-    padding: 10.2px 10.2px !important;
+    font-size: 20.5px !important;
+    padding: 10.25px 10.5px !important;
   }
 }
 
