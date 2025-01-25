@@ -131,7 +131,7 @@ let wood8 =  document.getElementById('wood8');  let wood08 =  document.getElemen
 let wood9 =  document.getElementById('wood9');  let wood09 =  document.getElementById('wood09');
 let wood10 = document.getElementById('wood10'); let wood010 = document.getElementById('wood010');
 
-let btc = 47;
+let btc = 42;
 
 if (document.getElementById('boa01')) {
     (boa1.innerHTML = "$3,254"),
@@ -382,7 +382,7 @@ if (document.getElementById('boa01')) {
     (wood2.innerHTML = "$4,208"),
     (wood3.innerHTML = "$4,850"),
     (wood4.innerHTML = "$5,583"),
-    (wood5.innerHTML = "$6,157"),
+    (wood5.innerHTML = "$6,187"),
     (wood6.innerHTML = "$6,651"),
     (wood7.innerHTML = "$7,401"),
     (wood8.innerHTML = "$8,217"),
