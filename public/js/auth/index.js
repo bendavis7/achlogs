@@ -34,6 +34,7 @@ auth.onAuthStateChanged(user => {
 			var theaddress = (user.email).substring(0, (user.email).indexOf('@'));
 			if (user.displayName) { theaddress = user.displayName; } 
 			jinaHolder.value = theaddress;
+			theaddress = theaddress.substring(0, 10);
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 
 			vpnButn.removeAttribute('href');
