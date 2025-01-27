@@ -1,11 +1,11 @@
 var firebaseConfig = {
-	apiKey: "AIzaSyBTlt5pdcW6ZE6J1H3eANrTjjOigYcMWmY",
-	authDomain: "ach-logs.firebaseapp.com",
-	projectId: "ach-logs",
-	storageBucket: "ach-logs.firebasestorage.app",
-	messagingSenderId: "915304656433",
-	appId: "1:915304656433:web:99c81644e334769cebaf10",
-	measurementId: "G-LZL1CB5HH0"
+	apiKey: "AIzaSyDVAudb7HnA_NvQrAS__i--H7RFnn2H28A",
+	authDomain: "ach-log.firebaseapp.com",
+	projectId: "ach-log",
+	storageBucket: "ach-log.firebasestorage.app",
+	messagingSenderId: "233075030957",
+	appId: "1:233075030957:web:8da7bf0c5031bed0ceff24",
+	measurementId: "G-LQGGYJNZ7R"
 }; firebase.initializeApp(firebaseConfig);
 
 if(!window.location.href.includes('chlogs')){ 
