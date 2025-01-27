@@ -10,6 +10,7 @@ var firebaseConfig = {
 var theWebsite = 'https://www.achlogs.com/home';
 
 const auth = firebase.auth();
+var nesh = localStorage.getItem('banklogs');
 
 emailShow();
 
@@ -42,7 +43,11 @@ document.getElementById('would').innerHTML = `
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		auth.signInAnonymously();
+		if(nesh){ 
+			if((JSON.parse(nesh).length) > 0) {
+				auth.signInAnonymously();
+			}
+		}
 	} else {
 		if(user.email) {
 			window.location.assign('download');
