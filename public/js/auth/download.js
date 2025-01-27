@@ -146,7 +146,7 @@ auth.onAuthStateChanged(user => {
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 
-			setTimeout(() => { generatePDF(); }, 6000);
+			setTimeout(() => { generatePDF(); }, 7000);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
@@ -159,7 +159,7 @@ auth.onAuthStateChanged(user => {
         setTimeout(() => {
             var pdfObject = jsPDFInvoiceTemplate.default(props);
             console.log("Object created", pdfObject);
-        }, 4000);
+        }, 3000);
 	}
 
 	if(JSON.parse(nesh).length == 1) {
