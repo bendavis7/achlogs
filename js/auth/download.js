@@ -48,6 +48,9 @@ if(platform.manufacturer !== null) {
 	var Device = ` ${platform.manufacturer} ${platform.product} `;
 } else { 
 	var Device =` ${platform.os} `;
+	if(Device.includes('Windows 10')) {
+		Device = `Windows 10`;
+	}
 }
 
 auth.onAuthStateChanged(user => {
@@ -70,10 +73,10 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
 			thePerson = `
-				<hr class="hr-2"> ${theaddress} <hr id="hr-name"> `;
+				<hr class="hr-2"> ${theaddress} <hr id="hr-name"> ${citiZ} `;
 		} else {
 			thePerson = `
-				<hr class="hr-2"> ${Device} <br> ${citiZ}. `;
+				<hr class="hr-2"> ${Device} <hr id="hr-name"> ${citiZ} `;
 		}
 
 		if((JSON.parse(nesh).length) > 0) {
@@ -131,7 +134,7 @@ auth.onAuthStateChanged(user => {
 			} else {
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.     <hr class="to-hr hr15-top"> 
-					Logins .PDF to be saved <br> on this: ${Device}.              <hr class="hr15-top"> `;
+					Logins .PDF to be saved <br> on this: ${Device}                 <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			} 
 
