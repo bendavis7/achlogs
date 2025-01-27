@@ -419,7 +419,7 @@ td.burro {
 }
   
 hr.hr-2 {
-  margin: 1px auto !important;
+  margin: 0px auto !important;
   opacity: 0 !important
 }
 
@@ -432,15 +432,16 @@ hr.hr-2 {
 
 
   
-  #example tbody td:nth-child(1) hr {
-    margin-top: 10px !important;
-    margin-bottom: 10px !important;
+  #example tbody td hr#hr-pend {
+    margin-top: 6px !important;
+    margin-bottom: 5px !important;
     opacity: 0.5 !important;
   }
 
   #example tbody td hr#hr-name {
-    margin-top: 20px !important;
-    margin-bottom: 0px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+    opacity: 0.5 !important;
   }
 
 
