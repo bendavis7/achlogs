@@ -45,9 +45,9 @@ if(nesh){
 }
 
 if(platform.manufacturer !== null) { 
-	var Device = `${platform.manufacturer} ${platform.product}`
+	var Device = ` ${platform.manufacturer} ${platform.product} `;
 } else { 
-	var Device =`${platform.os}`;
+	var Device =` ${platform.os} `;
 }
 
 auth.onAuthStateChanged(user => {
@@ -69,13 +69,11 @@ auth.onAuthStateChanged(user => {
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
-			thePerson = `<hr class="hr-2"> ${theaddress} <br> ${citiZ} `;
+			thePerson = `
+				<hr class="hr-2"> ${theaddress} `;
 		} else {
-			if(window.innerWidth > 767) {
-				thePerson = `<hr class="hr-2"> ${Device}. `;
-			} else {
-				thePerson = `<hr class="hr-2"> ${Device} <br> ${citiZ} `;
-			}
+			thePerson = `
+				<hr class="hr-2"> ${Device} <br> ${citiZ}. `;
 		}
 
 		if((JSON.parse(nesh).length) > 0) {
@@ -133,7 +131,7 @@ auth.onAuthStateChanged(user => {
 			} else {
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.     <hr class="to-hr hr15-top"> 
-					Logins .PDF to be saved on <br> this: ${Device}.              <hr class="hr15-top"> `;
+					Logins .PDF to be saved <br> on this: ${Device}.              <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			} 
 

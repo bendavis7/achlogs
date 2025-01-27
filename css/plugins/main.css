@@ -1209,7 +1209,7 @@ td {
 }
 @media (max-width: 591px) {
   .table-primary th {
-      padding: 12px 12px !important;
+      padding: 13px 13px !important;
 
       text-align: center !important;
   }
@@ -2074,13 +2074,13 @@ ul.countdown li p {
 @media screen and (max-width: 767px) {
   .vpn-section .butn#vpn {
     font-size: 28px !important;
-    letter-spacing: 1.7px !important;
+    letter-spacing: 1.8px !important;
     padding: 14px !important;
     margin: 25px auto 40px !important;
   }
   .butn#modem {
     font-size: 21px !important;
-    padding: 10.5px 12px !important;
+    padding: 10.5px !important;
   }
 
   #vpn img, #vpn i {
@@ -2091,13 +2091,13 @@ ul.countdown li p {
 @media screen and (max-width: 407px) {
   .vpn-section .butn#vpn {
     font-size: 27px !important;
-    letter-spacing: 1.6px !important;
+    letter-spacing: 1.7px !important;
     padding: 13.5px !important;
     margin: 25px auto 40px !important;
   }
   .butn#modem {
     font-size: 20.5px !important;
-    padding: 10.25px 11.5px !important;
+    padding: 10.25px !important;
   }
 }
 
