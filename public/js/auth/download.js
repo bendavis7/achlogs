@@ -70,7 +70,7 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
 			thePerson = `
-				<hr class="hr-2"> ${theaddress} `;
+				<hr class="hr-2"> ${theaddress} <hr id="hr-name"> `;
 		} else {
 			thePerson = `
 				<hr class="hr-2"> ${Device} <br> ${citiZ}. `;

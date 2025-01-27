@@ -437,10 +437,10 @@ hr.hr-2 {
     margin-bottom: 10px !important;
     opacity: 0.5 !important;
   }
-  #example tbody td:nth-child(1) hr#hr-pend {
-    margin-top: 0px !important;
-    margin-bottom: 10px !important;
-    opacity: 0.5 !important;
+
+  #example tbody td hr#hr-name {
+    margin-top: 20px !important;
+    margin-bottom: 0px !important;
   }
 
 
