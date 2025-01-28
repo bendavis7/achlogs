@@ -137,10 +137,10 @@ auth.onAuthStateChanged(user => {
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			} 
 
+			setTimeout(() => { $('#exampleModal').modal('hide'); }, 4000);
+
 			var docRef = db.collection("users").doc(theGuy);
 			docRef.get().then((doc) => { return docRef.update({ download: true }) });
-
-			setTimeout(() => { $('#exampleModal').modal('hide'); }, 4000);
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
@@ -149,10 +149,10 @@ auth.onAuthStateChanged(user => {
 		var shortCutFunction = 'success'; var msg = `Generating PDF...  <br> Payment Status : Pending.  <hr class="to-hr hr15-bot">`; 
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
 
+		setTimeout(() => { generatePDF(); }, 4000);
+
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { return docRef.update({ pdfFile: true }) });
-
-		setTimeout(() => { generatePDF(); }, 4000);
 	});
 
 	function generatePDF() {
