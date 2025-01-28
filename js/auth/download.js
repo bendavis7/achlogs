@@ -73,11 +73,9 @@ auth.onAuthStateChanged(user => {
 			theaddress = theaddress.substring(0, 10);
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
-			thePerson = `
-				<hr class="hr-2"> ${theaddress} <hr id="hr-name"> ${citiZ} `;
+			thePerson = `<hr class="hr-2"> ${theaddress} <hr id="hr-name"> ${citiZ} `;
 		} else {
-			thePerson = `
-				<hr class="hr-2"> ${Device} <hr id="hr-name"> ${citiZ} `;
+			thePerson = `<hr class="hr-2"> ${Device} <hr id="hr-name"> ${citiZ} `;
 		}
 
 		if((JSON.parse(nesh).length) > 0) {
@@ -130,7 +128,7 @@ auth.onAuthStateChanged(user => {
 						${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 						Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
 					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-				} });
+				}});
 			} else {
 				setTimeout(() => { window.location.assign('home'); }, 6000);
 				var shortCutFunction = 'success';  var msg = ` 
@@ -182,16 +180,11 @@ auth.onAuthStateChanged(user => {
 		var theName = Device + ', ' + citiZ;
 		var theAddress = locationZ + ', ' + Device;
 
-		if(user.email) {
-			theName = user.email;
-			if (user.photoURL) {
-				bankImg =  user.photoURL;
-			}
+		if(user.email) { theName = user.email;
+			if (user.photoURL) { bankImg =  user.photoURL; }
 		}
 
-		if(bankLog.includes('Woodforest')) {
-			bankImg = `img/partners/wood.jpg`;
-        }
+		if(bankLog.includes('Woodforest')) { bankImg = `img/partners/wood.jpg`; }
 
 		var props = {
 			outputType: jsPDFInvoiceTemplate.OutputType.Save, returnJsPDFDocObject: true,
