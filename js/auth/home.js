@@ -43,7 +43,9 @@ document.getElementById('would').innerHTML = `
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		auth.signInAnonymously();
+		if((JSON.parse(nesh).length) > 0) {
+			auth.signInAnonymously();
+		}
 	} else {
 		if(user.email) {
 			window.location.assign('download');
