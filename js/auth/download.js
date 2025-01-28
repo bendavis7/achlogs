@@ -90,11 +90,9 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ 
-					yourID: itemz, device: Device, location: locationZ });
+				return docRef.set({ yourID: itemz, device: Device, location: locationZ });
 			} else { 
-				return db.collection('users').doc(theGuy).update({ 
-					yourID: itemz, device: Device, location: locationZ });
+				return docRef.update({ yourID: itemz, device: Device, location: locationZ });
 			}
 		});
 	}
@@ -142,10 +140,7 @@ auth.onAuthStateChanged(user => {
 			} 
 
 			var docRef = db.collection("users").doc(theGuy);
-			docRef.get().then((doc) => { if (!(doc.exists)) { 
-					return db.collection('users').doc(theGuy).set({ download: true }) 
-				} else { return db.collection('users').doc(theGuy).update({ download: true }) } 
-			});
+			docRef.get().then((doc) => { return docRef.update({ download: true }) });
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 4000);
 		});
@@ -157,11 +152,8 @@ auth.onAuthStateChanged(user => {
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
 
 		var docRef = db.collection("users").doc(theGuy);
-		docRef.get().then((doc) => { if (!(doc.exists)) { 
-				return db.collection('users').doc(theGuy).set({ pdfFile: true }) 
-			} else { return db.collection('users').doc(theGuy).update({ pdfFile: true }) } 
-		});
-		
+		docRef.get().then((doc) => { return docRef.update({ pdfFile: true }) });
+
 		setTimeout(() => { generatePDF(); }, 4000);
 	});
 
