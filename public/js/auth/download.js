@@ -130,10 +130,10 @@ auth.onAuthStateChanged(user => {
 					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 				}});
 			} else {
-				setTimeout(() => { window.location.assign('home'); }, 7000);
+				setTimeout(() => { generatePDF(); }, 7000);
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.     <hr class="to-hr hr15-top"> 
-					You're not logged in <br> with an email address..                <hr class="hr15-top"> `;
+					Logins .PDF to be saved <br> on this: ${Device}                  <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			} 
 
