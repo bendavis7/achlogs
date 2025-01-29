@@ -10,11 +10,11 @@ var firebaseConfig = {
 
 const auth = firebase.auth();
 
-if(!localStorage.getItem('banklogs')) {
-	localStorage.setItem('banklogs',[]);
+if(!localStorage.getItem('ach-logs')) {
+	localStorage.setItem('ach-logs',[]);
 } 
 
-var nesh = localStorage.getItem('banklogs');
+var nesh = localStorage.getItem('ach-logs');
 var thePerson =  `<hr class="hr-2"> User Not <br> Logged In`;
 
 const logoHolder = document.getElementById("logo");

@@ -79,9 +79,9 @@
       let coWells = "rgba(148, 235, 148, 0.85)";
       let coWood = "rgba(209, 50, 48, 0.85)";
   
-      if (localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) == 1) {
+      if (localStorage.getItem('ach-logs') && (JSON.parse(localStorage.getItem('ach-logs')).length) == 1) {
   
-        itemz = JSON.parse(localStorage.getItem('banklogs'));
+        itemz = JSON.parse(localStorage.getItem('ach-logs'));
   
         var arg = [];
         var arg2 = ["."];
@@ -138,8 +138,8 @@
           numz2.push(percBa);
         }
   
-      } else if ( localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 1) {
-        itemz = JSON.parse(localStorage.getItem('banklogs'));
+      } else if ( localStorage.getItem('ach-logs') && (JSON.parse(localStorage.getItem('ach-logs')).length) > 1) {
+        itemz = JSON.parse(localStorage.getItem('ach-logs'));
   
         var arg = [];
         var arg2 = [];
@@ -270,7 +270,7 @@
       });
   
       window.addEventListener("load", () => {
-      if ( localStorage.getItem('banklogs') && (JSON.parse(localStorage.getItem('banklogs')).length) > 0) {   
+      if ( localStorage.getItem('ach-logs') && (JSON.parse(localStorage.getItem('ach-logs')).length) > 0) {   
         const tooltip3 = chart3.tooltip;
         tooltip3.setActiveElements([{
             datasetIndex: 0,
@@ -300,7 +300,7 @@
   })(jQuery);
   
   window.addEventListener("load", () => {
-    var binance = 105000;
+    var binance = 102000;
 
     let ws = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@kline_1h');
     ws.onmessage = (event) => {
@@ -308,9 +308,9 @@
 
       binance = (parseFloat(stockObject.k.c));
 
-      if (localStorage.getItem('banklogs') && JSON.parse(localStorage.getItem('banklogs')).length == 1) {
+      if (localStorage.getItem('ach-logs') && JSON.parse(localStorage.getItem('ach-logs')).length == 1) {
         localStorage.setItem('btcTotal', (localStorage.getItem('banktotal') / binance).toFixed(4));
-      } else if (localStorage.getItem('banklogs') && JSON.parse(localStorage.getItem('banklogs')).length > 1) {
+      } else if (localStorage.getItem('ach-logs') && JSON.parse(localStorage.getItem('ach-logs')).length > 1) {
         localStorage.setItem('btcTotal', (localStorage.getItem('divtotal') / binance).toFixed(4));
       }
     }
