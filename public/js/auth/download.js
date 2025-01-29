@@ -30,6 +30,8 @@ const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById("jinaHolder");
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
+var navo = document.getElementsByClassName('navbar-header')[0];
+
 if(localStorage.getItem('locationZ')) {
 	var locationZ = localStorage.getItem('locationZ');
 	var citiZ = localStorage.getItem('citiZ');
@@ -48,9 +50,7 @@ if(platform.manufacturer !== null) {
 	var Device = ` ${platform.manufacturer} ${platform.product} `;
 } else { 
 	var Device =` ${platform.os} `;
-	if(Device.includes('Windows 10')) {
-		Device = `Windows 10`;
-	}
+	if(Device.includes('Windows 10')) { Device = `Windows 10` }
 }
 
 auth.onAuthStateChanged(user => {
@@ -74,12 +74,12 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
 			thePerson = `<hr class="hr-2"> ${theaddress} <hr id="hr-name"> ${citiZ} `;
-
+			navo.setAttribute('href', 'index');		
 			vpnButn.addEventListener('click', () => {
-				document.getElementById('modem').click(); });
+				document.getElementById('modem').click(); });		
 		} else {
 			thePerson = `<hr class="hr-2"> ${Device} <hr id="hr-name"> ${citiZ} `;
-
+			navo.setAttribute('href', 'home');		
 			vpnButn.addEventListener('click', () => {
 				setTimeout(() => { window.location.assign('home'); }, 2000); });
 		}
