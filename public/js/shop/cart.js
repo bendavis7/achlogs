@@ -5,11 +5,11 @@ var showingToast = document.getElementById('showtoasts');
 
 var logs = localStorage.getItem('ach-logs');
 
-if(logs){
-    if((JSON.parse(logs).length) > 0) {
+if(localStorage.getItem('ach-logs')){
+    if((JSON.parse(localStorage.getItem('ach-logs')).length) > 0) {
 
-        items = JSON.parse(logs);
-        document.getElementById('cartlength').innerText = (JSON.parse(logs).length);
+        items = JSON.parse(localStorage.getItem('ach-logs'));
+        document.getElementById('cartlength').innerText = (JSON.parse(localStorage.getItem('ach-logs')).length);
 
         items.map(data=>{
             var image = `<td><img src=${data.image}></td>`
@@ -55,7 +55,7 @@ if(logs){
 showingToast.addEventListener('click', showThis);   
 
 function showThis() {
-    if(logs && (JSON.parse(logs).length) > 0) {
+    if(logs && (JSON.parse(localStorage.getItem('ach-logs')).length) > 0) {
         window.location.assign('home'); 
     } else { 
         var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; 
@@ -238,8 +238,8 @@ function addItemToCart(price, balance, account,website, image,info1,info2,info3,
     var info41 = `<td>${info4}</td>`
     var info51 = `<td>${info5}</td>`
 
-    if(logs && ((JSON.parse(logs).length) > 0)){
-        var cartItemNames = JSON.parse(logs);
+    if(localStorage.getItem('ach-logs') && ((JSON.parse(localStorage.getItem('ach-logs')).length) > 0)){
+        var cartItemNames = JSON.parse(localStorage.getItem('ach-logs'));
         for(var i = 0; i < cartItemNames.length; i++) {
             if(cartItemNames.length > 0.5) {
                 var shortCutFunction = 'success';   var msg = `
@@ -300,8 +300,8 @@ function addToLocalStorage(price, balance, account,website, image,info1,info2,in
     }
     items.push(item);
     localStorage.setItem('ach-logs', JSON.stringify(items));
-    if(logs){
-        document.getElementById('cartlength').innerText = (JSON.parse(logs).length);
+    if(localStorage.getItem('ach-logs')){
+        document.getElementById('cartlength').innerText = (JSON.parse(localStorage.getItem('ach-logs')).length);
         document.getElementById('cartlength').style.display = 'block';
     }
 }
@@ -327,7 +327,7 @@ function removeItemFromCart(price, balance,account,website,image,info1,info2,inf
 }
 
 function updateCartTotal() {
-    let items3 = (JSON.parse(logs));
+    let items3 = (JSON.parse(localStorage.getItem('ach-logs')));
     var total = 0;
     items3.map(data=>{
         var price4 = data.price.replace('Price: ','').replace(',','').replace('$','');
@@ -340,7 +340,7 @@ function updateCartTotal() {
     var logsContainer =  document.getElementsByClassName('gallery')[0];
     var singleLog = logsContainer.getElementsByClassName('butn');
     for(var i = 0; i < singleLog.length; i++){
-        let cart = JSON.parse(logs);
+        let cart = JSON.parse(localStorage.getItem('ach-logs'));
         cart.map(data=>{
             data.price3 = data.price.replace('Price: ','');
             if((singleLog[i].parentElement.parentElement.children[0].children[0].innerHTML == data.balance.replace('Balance: ', '')) && (singleLog[i].parentElement.children[0].innerHTML) == data.website) {
@@ -380,7 +380,7 @@ function updateCartTotal() {
 
 
 function updateCartTotal2() {
-    let items3 = (JSON.parse(logs));
+    let items3 = (JSON.parse(localStorage.getItem('ach-logs')));
     var total = 0;
     items3.map(data=>{
         var price4 = data.price.replace('Price: ','').replace(',','').replace('$','');
@@ -388,7 +388,7 @@ function updateCartTotal2() {
     });
     document.getElementById('thetot').innerHTML = `Cart:  <span>$${total.toLocaleString()}</span>`;
 
-    document.getElementById('cartlength').innerText = (JSON.parse(logs).length);
+    document.getElementById('cartlength').innerText = (JSON.parse(localStorage.getItem('ach-logs')).length);
     
     document.getElementById('theno1').innerHTML =  'Cart Total: $' + total.toLocaleString();
 }
