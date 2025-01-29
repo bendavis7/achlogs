@@ -5,13 +5,15 @@ var showingToast = document.getElementById('showtoasts');
 
 var theLogo = document.getElementById('logo');
 
-const auth2 = firebase.auth();
+var logs = localStorage.getItem('ach-logs');
 
-if(localStorage.getItem('banklogs')){
-    if((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
+var vpnButx = document.getElementById('vpn');
 
-        items = JSON.parse(localStorage.getItem('banklogs'));
-        document.getElementById('cartlength').innerText = (JSON.parse(localStorage.getItem('banklogs')).length);
+if(logs){
+    if((JSON.parse(logs).length) > 0) {
+
+        items = JSON.parse(logs);
+        document.getElementById('cartlength').innerText = (JSON.parse(logs).length);
 
         items.map(data=>{
             var image = `<td><img src=${data.image}></td>`
@@ -47,7 +49,38 @@ if(localStorage.getItem('banklogs')){
             button.addEventListener('click', removeCartItem)
         }
 
+        for(var i = 0; i < items.length; i++) {
+            var cartRow = document.createElement('tr');
+            var cartRow2 = document.createElement('li');
+            cartRow.classList.add('table-warning');
+            cartRow2.classList.add('total','bg-black');
+            var cartItems =  document.getElementsByClassName('champez3')[0];
+            var cartRowContents = `
+                <td><img src=${items[i].image}></td>       
+                <td>
+                    PENDING <hr id="hr-pend">
+                    <span>${(items[i].balance).replace('Balance: ','')}</span> 
+                </td>
+                <td id=${'name-on-table' + items.indexOf(items[i])} style="filter: blur(0px); white-space: normal !important;"></td>  
+                <td>${items[i].account}</td>
+               <td class="burro"><i class="fas fa-angle-down"></i></td>
+                <td>${(items[i].price).replace('Price: ', '')}</td>
+                <td>${items[i].info1}</td>
+                <td>${items[i].info2}</td>
+                <td>${items[i].info3}</td>
+                <td>${items[i].info4}</td>
+                <td>${items[i].info5}</td>
+                <td>${items[i].website}</td>
+            `;
+            cartRow.innerHTML = cartRowContents;
+            cartItems.prepend(cartRow);
+        }
+
         updateCartTotal();
+
+        vpnButx.removeAttribute('href');
+        vpnButx.addEventListener('click', () => { 
+             $('#profileModal').modal('show'); });   
     } else {
         document.getElementById('cartlength').style.display = 'none';
     }
@@ -56,22 +89,48 @@ if(localStorage.getItem('banklogs')){
 }
 
 showingToast.addEventListener('click', showThis);   
-var joe = localStorage.getItem('banklogs')
 
 function showThis() {
-    if(joe && (JSON.parse(joe).length) > 0) {
-        auth2.onAuthStateChanged(user => {
-            if(user.email) { 
-                window.location.assign('download'); 
-            } else {
-                var shortCutFunction = 'success'; var msg = `You're not logged in <br> with an email addresss.. <hr class="to-hr hr15-bot">`; 
-                toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
-            }
-        });
+    if(logs && (JSON.parse(logs).length) > 0) {
+        window.location.assign('home'); 
     } else { 
         var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; 
         toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; $('#profileModal').modal('hide'); 
     }
+}
+
+
+document.getElementById('balance1').innerHTML = '$4,630';
+document.getElementById('balance2').innerHTML = '$4,574';
+document.getElementById('balance3').innerHTML = '$4,905';
+document.getElementById('balance4').innerHTML = '$4,523';
+document.getElementById('balance5').innerHTML = '$4,402';
+document.getElementById('balance6').innerHTML = '$4,740';
+document.getElementById('balance7').innerHTML = '$4,087';
+document.getElementById('balance8').innerHTML = '$4,259';
+document.getElementById('balance9').innerHTML = '$4,820';
+
+document.getElementById('balance10').innerHTML = '$4,805';
+document.getElementById('balance11').innerHTML = '$4,214';
+document.getElementById('balance12').innerHTML = '$4,390';
+document.getElementById('balance13').innerHTML = '$4,832';
+document.getElementById('balance14').innerHTML = '$4,439';
+document.getElementById('balance15').innerHTML = '$4,228';
+document.getElementById('balance16').innerHTML = '$4,910';
+document.getElementById('balance17').innerHTML = '$4,104';
+document.getElementById('balance18').innerHTML = '$4,724';
+document.getElementById('balance19').innerHTML = '$4,863';
+document.getElementById('balance20').innerHTML = '$4,270';
+document.getElementById('balance21').innerHTML = '$4,309';
+document.getElementById('balance22').innerHTML = '$4,183';
+
+var jobs = document.getElementsByClassName('prized');
+for(j=0; j< jobs.length; j++) {
+    var theJob = jobs[j];
+    var thePrize = theJob.parentElement.children[1].children[2].innerText;
+    
+    var thePr = parseFloat((thePrize.replace("$", "").replace(",", "") / 42).toFixed(0)).toLocaleString();
+    theJob.innerHTML = '$'+ thePr;
 }
 
 
@@ -110,14 +169,14 @@ function removeItemFromCart(price, balance,account,website,image,info1,info2,inf
     function checkAdult(items) {
         return JSON.stringify(items) !== JSON.stringify(item)
     }
-    localStorage.setItem('banklogs', JSON.stringify(items.filter(checkAdult)));
+    localStorage.setItem('ach-logs', JSON.stringify(items.filter(checkAdult)));
     items = items.filter(checkAdult);
     window.location.reload()
 }
 
 
 function updateCartTotal() {
-    let items3 = (JSON.parse(localStorage.getItem('banklogs')));
+    let items3 = (JSON.parse(logs));
     var total = 0;
     items3.map(data=>{
         var price4 = data.price.replace('Price: ','').replace(',','').replace('$','');
@@ -127,17 +186,9 @@ function updateCartTotal() {
     document.getElementById('thetot').innerHTML = `Total:  <span>$${total.toLocaleString()}</span>`;
     document.getElementById('theno1').innerHTML =  'Cart Total: $' + total.toLocaleString();
     
-    if(JSON.parse(localStorage.getItem('banklogs')).length > 0) {
-        const bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
-        const bankImg = (JSON.parse(localStorage.getItem('banklogs'))[0].image);
-
-		const bankBal = (JSON.parse(localStorage.getItem('banklogs'))[0].balance);
-		const banking1 = (JSON.parse(localStorage.getItem('banklogs'))[0].info1);
-		const banking2 = (JSON.parse(localStorage.getItem('banklogs'))[0].info2);
-		const banking3 = (JSON.parse(localStorage.getItem('banklogs'))[0].info3);
-		const banking4 = (JSON.parse(localStorage.getItem('banklogs'))[0].info4);
-		const banking5 = (JSON.parse(localStorage.getItem('banklogs'))[0].info5);
-
+    if(JSON.parse(logs).length > 0) {
+        const bankLog = (JSON.parse(logs)[0].account);
+        const bankImg = (JSON.parse(logs)[0].image);
         theLogo.src = `${bankImg}`;
         document.getElementById('jinaHolder2').innerHTML = `${bankLog}`;
 
@@ -147,16 +198,6 @@ function updateCartTotal() {
         if(bankLog.includes('Woodforest')) {
             theLogo.src = `img/partners/wood.jpg`;
         }
-
-        document.getElementById('would').innerHTML = `
-            <div class="modal-body no-bord"> <span id="in-span">${bankBal}</span> </div> 
-            <div class="modal-body no-bord"> ${banking1} </div> 
-            <div class="modal-body no-bord"> ${banking2} </div> 
-            <div class="modal-body no-bord"> ${banking3} </div> 
-            <div class="modal-body no-bord"> ${banking4} </div> 
-            <div class="modal-body no-bord"> ${banking5} </div> 
-        `;
-
     } 
 
 

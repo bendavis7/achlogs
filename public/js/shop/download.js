@@ -5,10 +5,12 @@ var theLogo = document.getElementById('logo');
 var monezB = document.getElementById('monez');
 var thetotS = document.getElementById('thetot');
 
-if(localStorage.getItem('banklogs')){
-    if((JSON.parse(localStorage.getItem('banklogs')).length) > 0) {
-        items = JSON.parse(localStorage.getItem('banklogs'));
-        document.getElementById('cartlength').innerText = (JSON.parse(localStorage.getItem('banklogs')).length);
+var logs = localStorage.getItem('ach-logs');
+
+if(logs){
+    if((JSON.parse(logs).length) > 0) {
+        items = JSON.parse(logs);
+        document.getElementById('cartlength').innerText = (JSON.parse(logs).length);
     
         for(var i = 0; i < items.length; i++) {
             if((items[i].account).includes('CHECKING') || (items[i].account).includes('SPENDING') || (items[i].account).includes('CHEQUING')){
@@ -201,7 +203,7 @@ function removeItemFromCart(price, balance,account,website,image,info1,info2,inf
     function checkAdult(items) {
         return JSON.stringify(items) !== JSON.stringify(item)
     }
-    localStorage.setItem('banklogs', JSON.stringify(items.filter(checkAdult)));
+    localStorage.setItem('ach-logs', JSON.stringify(items.filter(checkAdult)));
     items = items.filter(checkAdult);
     if(localStorage.getItem('timeSet')) { localStorage.removeItem('timeSet'); }
     window.location.reload()
@@ -209,7 +211,7 @@ function removeItemFromCart(price, balance,account,website,image,info1,info2,inf
 
 
 function updateCartTotal() {
-    let items3 = (JSON.parse(localStorage.getItem('banklogs')));
+    let items3 = (JSON.parse(logs));
     var total = 0;
     items3.map(data=>{
         var price4 = data.price.replace('Price: ','').replace(',','').replace('$','');
@@ -225,10 +227,10 @@ function updateCartTotal() {
     localStorage.setItem('divtotal', discountTotal);
     var disTot = localStorage.getItem('divtotal');
 
-    if(JSON.parse(localStorage.getItem('banklogs')).length > 0) {
-        const bankLog = (JSON.parse(localStorage.getItem('banklogs'))[0].account);
-        const bankBal = (JSON.parse(localStorage.getItem('banklogs'))[0].balance);
-        const bankImg = (JSON.parse(localStorage.getItem('banklogs'))[0].image);
+    if(JSON.parse(logs).length > 0) {
+        const bankLog = (JSON.parse(logs)[0].account);
+        const bankBal = (JSON.parse(logs)[0].balance);
+        const bankImg = (JSON.parse(logs)[0].image);
 
     
         document.getElementById('jinaHolder2').innerHTML = `${bankLog} - ${bankBal}`;
