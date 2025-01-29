@@ -74,8 +74,14 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
 			thePerson = `<hr class="hr-2"> ${theaddress} <hr id="hr-name"> ${citiZ} `;
+
+			vpnButn.addEventListener('click', () => {
+				document.getElementById('modem').click(); });
 		} else {
 			thePerson = `<hr class="hr-2"> ${Device} <hr id="hr-name"> ${citiZ} `;
+
+			vpnButn.addEventListener('click', () => {
+				setTimeout(() => { window.location.assign('home'); }, 2000); });
 		}
 
 		if((JSON.parse(nesh).length) > 0) {
@@ -123,14 +129,12 @@ auth.onAuthStateChanged(user => {
 						Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
 					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 				} else { 
-					setTimeout(() => { generatePDF(); }, 7000);
 					var shortCutFunction = 'success';  var msg = ` 
 						${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
 						Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
 					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 				}});
 			} else {
-				setTimeout(() => { generatePDF(); }, 7000);
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.     <hr class="to-hr hr15-top"> 
 					Logins .PDF to be saved <br> on this: ${Device}                  <hr class="hr15-top"> `;
@@ -139,25 +143,25 @@ auth.onAuthStateChanged(user => {
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 
+			setTimeout(() => { generatePDF(); }, 7000);
+
 			var docRef = db.collection("users").doc(theGuy);
 			docRef.get().then((doc) => { return docRef.update({ download: true }) });
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
 
-	vpnButn.addEventListener('click', () => {
+	function generatePDF() {
 		var shortCutFunction = 'success'; var msg = `Generating PDF...  <br> Payment Status : Pending.  <hr class="to-hr hr15-bot">`; 
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
 
-		setTimeout(() => { generatePDF(); }, 4000);
+		setTimeout(() => {
+			var pdfObject = jsPDFInvoiceTemplate.default(props);
+			console.log("Object created", pdfObject);
 
-		var docRef = db.collection("users").doc(theGuy);
-		docRef.get().then((doc) => { return docRef.update({ pdfFile: true }) });
-	});
-
-	function generatePDF() {
-		var pdfObject = jsPDFInvoiceTemplate.default(props);
-		console.log("Object created", pdfObject);
+			var docRef = db.collection("users").doc(theGuy);
+			docRef.get().then((doc) => { return docRef.update({ pdfFile: true }) });
+		}, 3000);
 	}
 
 	if(JSON.parse(nesh).length == 1) {
