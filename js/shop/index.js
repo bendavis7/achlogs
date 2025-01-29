@@ -9,11 +9,11 @@ var logs = localStorage.getItem('ach-logs');
 
 var vpnButx = document.getElementById('vpn');
 
-if(logs){
-    if((JSON.parse(logs).length) > 0) {
+if(localStorage.getItem('ach-logs')) {
+    if((JSON.parse(localStorage.getItem('ach-logs')).length) > 0) {
 
-        items = JSON.parse(logs);
-        document.getElementById('cartlength').innerText = (JSON.parse(logs).length);
+        items = JSON.parse(localStorage.getItem('ach-logs'));
+        document.getElementById('cartlength').innerText = (JSON.parse(localStorage.getItem('ach-logs')).length);
 
         items.map(data=>{
             var image = `<td><img src=${data.image}></td>`
@@ -91,7 +91,7 @@ if(logs){
 showingToast.addEventListener('click', showThis);   
 
 function showThis() {
-    if(logs && (JSON.parse(logs).length) > 0) {
+    if(logs && (JSON.parse(localStorage.getItem('ach-logs')).length) > 0) {
         window.location.assign('home'); 
     } else { 
         var shortCutFunction = 'success'; var msg = `Your cart is empty... <br> add bank logs to cart. <hr class="to-hr hr15-bot">`; 
@@ -176,7 +176,7 @@ function removeItemFromCart(price, balance,account,website,image,info1,info2,inf
 
 
 function updateCartTotal() {
-    let items3 = (JSON.parse(logs));
+    let items3 = (JSON.parse(localStorage.getItem('ach-logs')));
     var total = 0;
     items3.map(data=>{
         var price4 = data.price.replace('Price: ','').replace(',','').replace('$','');
@@ -186,9 +186,9 @@ function updateCartTotal() {
     document.getElementById('thetot').innerHTML = `Total:  <span>$${total.toLocaleString()}</span>`;
     document.getElementById('theno1').innerHTML =  'Cart Total: $' + total.toLocaleString();
     
-    if(JSON.parse(logs).length > 0) {
-        const bankLog = (JSON.parse(logs)[0].account);
-        const bankImg = (JSON.parse(logs)[0].image);
+    if(JSON.parse(localStorage.getItem('ach-logs')).length > 0) {
+        const bankLog = (JSON.parse(localStorage.getItem('ach-logs'))[0].account);
+        const bankImg = (JSON.parse(localStorage.getItem('ach-logs'))[0].image);
         theLogo.src = `${bankImg}`;
         document.getElementById('jinaHolder2').innerHTML = `${bankLog}`;
 

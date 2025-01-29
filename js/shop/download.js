@@ -7,10 +7,10 @@ var thetotS = document.getElementById('thetot');
 
 var logs = localStorage.getItem('ach-logs');
 
-if(logs){
-    if((JSON.parse(logs).length) > 0) {
-        items = JSON.parse(logs);
-        document.getElementById('cartlength').innerText = (JSON.parse(logs).length);
+if(localStorage.getItem('ach-logs')){
+    if((JSON.parse(localStorage.getItem('ach-logs')).length) > 0) {
+        items = JSON.parse(localStorage.getItem('ach-logs'));
+        document.getElementById('cartlength').innerText = (JSON.parse(localStorage.getItem('ach-logs')).length);
     
         for(var i = 0; i < items.length; i++) {
             if((items[i].account).includes('CHECKING') || (items[i].account).includes('SPENDING') || (items[i].account).includes('CHEQUING')){
@@ -211,7 +211,7 @@ function removeItemFromCart(price, balance,account,website,image,info1,info2,inf
 
 
 function updateCartTotal() {
-    let items3 = (JSON.parse(logs));
+    let items3 = (JSON.parse(localStorage.getItem('ach-logs')));
     var total = 0;
     items3.map(data=>{
         var price4 = data.price.replace('Price: ','').replace(',','').replace('$','');
@@ -227,10 +227,10 @@ function updateCartTotal() {
     localStorage.setItem('divtotal', discountTotal);
     var disTot = localStorage.getItem('divtotal');
 
-    if(JSON.parse(logs).length > 0) {
-        const bankLog = (JSON.parse(logs)[0].account);
-        const bankBal = (JSON.parse(logs)[0].balance);
-        const bankImg = (JSON.parse(logs)[0].image);
+    if(JSON.parse(localStorage.getItem('ach-logs')).length > 0) {
+        const bankLog = (JSON.parse(localStorage.getItem('ach-logs'))[0].account);
+        const bankBal = (JSON.parse(localStorage.getItem('ach-logs'))[0].balance);
+        const bankImg = (JSON.parse(localStorage.getItem('ach-logs'))[0].image);
 
     
         document.getElementById('jinaHolder2').innerHTML = `${bankLog} - ${bankBal}`;
