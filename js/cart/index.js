@@ -93,7 +93,6 @@ function showThis() {
     }
 }
 
-
 document.getElementById('balance1').innerHTML = '$4,630';
 document.getElementById('balance2').innerHTML = '$4,574';
 document.getElementById('balance3').innerHTML = '$4,905';
