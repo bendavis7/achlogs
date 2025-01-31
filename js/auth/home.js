@@ -10,6 +10,8 @@ var firebaseConfig = {
 var theWebsite = 'https://www.achlogs.com/home';
 
 const auth = firebase.auth();
+const db = firebase.firestore();
+
 var nesh = localStorage.getItem('ach-logs');
 
 emailShow();
@@ -54,6 +56,17 @@ auth.onAuthStateChanged(user => {
 		if(user.email) {
 			window.location.assign('download');
 		}
+
+		var theGuy = locationZ + ', ' + user.uid;
+
+		var docRef = db.collection("users").doc(theGuy);
+		docRef.get().then((doc) => {
+			if (!(doc.exists)) { 
+				return docRef.set({ loginPage: true, location: locationZ });
+			} else { 
+				return docRef.update({ loginPage: true, location: locationZ });
+			}
+		});
 	} 
 });
 
