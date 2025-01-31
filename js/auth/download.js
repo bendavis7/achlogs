@@ -76,7 +76,7 @@ auth.onAuthStateChanged(user => {
 			thePerson = `<hr class="hr-2"> ${theaddress} <hr id="hr-name"> ${citiZ} `;
 		} else {
 			thePerson = `<hr class="hr-2"> ${Device} <hr id="hr-name"> ${citiZ} `;
-			var shortCutFunction = 'success'; var msg = `For smooth checkout <br> login with an email ... <hr class="to-hr hr15-bot">`; 
+			var shortCutFunction = 'success'; var msg = `For smooth checkout <br> login with an EMAIL ... <hr class="to-hr hr15-bot">`; 
 			toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
 			setTimeout(() => { window.location.assign('home'); }, 5000);
 		}
