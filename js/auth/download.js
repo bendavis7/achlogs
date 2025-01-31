@@ -76,7 +76,7 @@ auth.onAuthStateChanged(user => {
 			thePerson = `<hr class="hr-2"> ${theaddress} <hr id="hr-name"> ${citiZ} `;
 		} else {
 			thePerson = `<hr class="hr-2"> ${Device} <hr id="hr-name"> ${citiZ} `;
-			var shortCutFunction = 'success'; var msg = `For smooth checkout <br> login with an EMAIL ... <hr class="to-hr hr15-bot">`; 
+			var shortCutFunction = 'success'; var msg = `For smooth checkout <br> use an email address... <hr class="to-hr hr15-bot">`; 
 			toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
 			setTimeout(() => { window.location.assign('home'); }, 5000);
 		}
@@ -134,7 +134,7 @@ auth.onAuthStateChanged(user => {
 			} else {
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.     <hr class="to-hr hr15-top"> 
-					.PDF File to be saved on <br> this: ${Device}                    <hr class="hr15-top"> `;
+					Bank log to be saved on <br> this: ${Device}                   <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			} 
 
@@ -149,7 +149,7 @@ auth.onAuthStateChanged(user => {
 	document.getElementById('monez').addEventListener('click', signUpFunction);
 
 	function generatePDF() {
-		var shortCutFunction = 'success'; var msg = `Generating PDF...  <br> Payment Status : Pending.  <hr class="to-hr hr15-bot">`; 
+		var shortCutFunction = 'success'; var msg = `Generating PDF...  <br> Payment Status: Pending  <hr class="to-hr hr15-bot">`; 
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
 
 		setTimeout(() => {
