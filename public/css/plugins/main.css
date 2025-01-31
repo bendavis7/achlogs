@@ -2057,7 +2057,7 @@ ul.countdown li p {
   cursor: pointer;
   font-size: 32px !important;
   padding: 16px !important;
-  letter-spacing: 1.8px !important;
+  letter-spacing: 2px !important;
   border: 2px solid rgb(18, 29, 51, 0.7) !important;
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7) !important;
 }
@@ -2074,7 +2074,7 @@ ul.countdown li p {
 @media screen and (max-width: 767px) {
   .vpn-section .butn#vpn {
     font-size: 28px !important;
-    letter-spacing: 1.8px !important;
+    letter-spacing: 1.9px !important;
     padding: 14px !important;
     margin: 25px auto 40px !important;
   }
@@ -2091,7 +2091,7 @@ ul.countdown li p {
 @media screen and (max-width: 407px) {
   .vpn-section .butn#vpn {
     font-size: 27px !important;
-    letter-spacing: 1.7px !important;
+    letter-spacing: 1.8px !important;
     padding: 13.5px !important;
     margin: 25px auto 40px !important;
   }
