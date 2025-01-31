@@ -7,8 +7,6 @@ var theLogo = document.getElementById('logo');
 
 var logs = localStorage.getItem('ach-logs');
 
-var vpnButx = document.getElementById('vpn');
-
 if(localStorage.getItem('ach-logs')) {
     if((JSON.parse(localStorage.getItem('ach-logs')).length) > 0) {
 
@@ -77,10 +75,6 @@ if(localStorage.getItem('ach-logs')) {
         }
 
         updateCartTotal();
-
-        vpnButx.removeAttribute('href');
-        vpnButx.addEventListener('click', () => { 
-             $('#profileModal').modal('show'); });   
     } else {
         document.getElementById('cartlength').style.display = 'none';
     }
