@@ -12,8 +12,6 @@ var theWebsite = 'https://www.achlogs.com/home';
 const auth = firebase.auth();
 const db = firebase.firestore();
 
-var nesh = localStorage.getItem('ach-logs');
-
 emailShow();
 
 const logoHolder = document.getElementById("logo");
@@ -50,9 +48,7 @@ if(localStorage.getItem('locationZ')) {
 } else { var locationZ = ', ' }
 
 auth.onAuthStateChanged(user => {
-	if(!user) { 
-		auth.signInAnonymously();
-	} else {
+	if(user) { 
 		if(user.email) {
 			window.location.assign('download');
 		}
@@ -62,7 +58,7 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				setTimeout(() => { return docRef.set({ loginPage: true }); }, 5000);
+				return docRef.update({ loginPage: true });
 			} else { 
 				return docRef.update({ loginPage: true });
 			}
@@ -291,6 +287,8 @@ function drawHand2(ctx2, pos, length, width) {
 
 var navo = document.getElementsByClassName('navbar-header')[0];
 
+var navToggle = document.getElementsByClassName('navbar-toggler')[0];
+
 var clientID = document.getElementById('clients');
 
 navo.addEventListener('click', () => {
@@ -298,6 +296,6 @@ navo.addEventListener('click', () => {
 });
 
 clientID.addEventListener('click', () => {
-	$('#profileModal').modal('show');
+	navToggle.click();
 });
 
