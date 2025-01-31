@@ -21,8 +21,6 @@ const logoHolder = document.getElementById("logo");
 const jinaHolder = document.getElementById('jinaHolder');
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
-var vpnButn = document.getElementById('vpn');
-
 auth.onAuthStateChanged(user => {
 	if(user) { 
  		if (user.photoURL) {
@@ -36,10 +34,6 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			theaddress = theaddress.substring(0, 10);
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
-
-			vpnButn.removeAttribute('href');
-			vpnButn.addEventListener('click', () => { 
-				$('#profileModal').modal('show'); });   
 		} 
 	} 
 
