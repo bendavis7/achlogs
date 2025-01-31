@@ -5,8 +5,6 @@ var showingToast = document.getElementById('showtoasts');
 
 var logs = localStorage.getItem('ach-logs');
 
-const auth2 = firebase.auth();
-
 if(localStorage.getItem('ach-logs')){
     if((JSON.parse(localStorage.getItem('ach-logs')).length) > 0) {
 
@@ -170,15 +168,8 @@ function addToCartClick(event) {
 
     $('#exampleModal').modal('hide');
     
-    auth.onAuthStateChanged(user => { 
-        if(!user) { 
-            auth.signInAnonymously().then(() => {
-                window.location.assign('download'); });
-        } else { 
-            setTimeout(() => {
-                window.location.assign('download'); }, 2000);
-        }
-    });   
+    setTimeout(() => {
+        window.location.assign('download'); }, 2000);
 }
 
 
