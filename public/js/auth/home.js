@@ -299,11 +299,5 @@ navo.addEventListener('click', () => {
 });
 
 clientID.addEventListener('click', () => {
-	if(nesh){ 
-		if((JSON.parse(nesh).length) > 0) {
-			$('#profileModal').modal('show');
-		} else { navToggle.click(); }
-	} else {
-		navToggle.click();
-	}
+	navToggle.click();
 });

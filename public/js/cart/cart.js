@@ -169,14 +169,15 @@ function addToCartClick(event) {
     updateCartTotal();
 
     $('#exampleModal').modal('hide');
-
+    
     auth.onAuthStateChanged(user => { 
         if(!user) { 
             auth.signInAnonymously().then(() => {
                 window.location.assign('download'); });
         } else { 
-            setTimeout(() => { 
-                window.location.assign('download'); }, 2000)}
+            setTimeout(() => {
+                window.location.assign('download'); }, 2000);
+        }
     });   
 }
 
