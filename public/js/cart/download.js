@@ -4,6 +4,8 @@ const auth2 = firebase.auth();
 var theLogo = document.getElementById('logo');
 var monezB = document.getElementById('monez');
 var thetotS = document.getElementById('thetot');
+var flexOnes = document.getElementById('flex-one');
+var vpnXo = document.getElementById('vpn');
 
 var logs = localStorage.getItem('ach-logs');
 
@@ -115,8 +117,11 @@ if(localStorage.getItem('ach-logs')){
         thetotS.addEventListener('click', ()=> { 
             document.getElementById('modem').click(); });
 
-        document.getElementById('vpn').addEventListener('click', ()=> { 
+        vpnXo.addEventListener('click', ()=> { 
             document.getElementById('modem').click(); });
+            
+        flexOnes.addEventListener('click', ()=> { 
+             document.getElementById('modem').click(); });
         
         document.getElementById('the-logs').addEventListener('click', ()=> { 
             document.getElementById('modem').click(); });
