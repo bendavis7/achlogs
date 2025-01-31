@@ -49,7 +49,9 @@ if(localStorage.getItem('locationZ')) {
 } else { var locationZ = ', ' }
 
 auth.onAuthStateChanged(user => {
-	if(user) { 
+	if(!user) { 
+		auth.signInAnonymously();
+	} else {
 		if(user.email) {
 			window.location.assign('download');
 		}
