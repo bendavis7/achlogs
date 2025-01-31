@@ -62,9 +62,9 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return docRef.set({ loginPage: true });
+				return docRef.set({ loginPage: true, location: locationZ });
 			} else { 
-				return docRef.update({ loginPage: true });
+				return docRef.update({ loginPage: true, location: locationZ });
 			}
 		});
 	} 
