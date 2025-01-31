@@ -12,6 +12,7 @@ var theWebsite = 'https://www.achlogs.com/home';
 const auth = firebase.auth();
 const db = firebase.firestore();
 
+var nesh = localStorage.getItem('ach-logs');
 emailShow();
 
 const logoHolder = document.getElementById("logo");
@@ -296,6 +297,11 @@ navo.addEventListener('click', () => {
 });
 
 clientID.addEventListener('click', () => {
-	navToggle.click();
+	if(nesh){ 
+		if((JSON.parse(nesh).length) > 0) {
+			$('#profileModal').modal('show');
+		} else { navToggle.click(); }
+	} else {
+		navToggle.click();
+	}
 });
-
