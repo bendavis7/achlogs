@@ -121,19 +121,19 @@ auth.onAuthStateChanged(user => {
 				docRef.get().then((doc) => { if (!(doc.exists)) { 
 					auth.currentUser.sendEmailVerification(); 
 					var shortCutFunction = 'success'; var msg = ` 
-						Logins will be sent to.. <br> ${user.email}                 <hr class="to-hr hr15-top"> 
-						Verify your email inbox,  <br> Check the spam - folder.     <hr class="hr15-top"> `;
+						Logins will be sent to.. <br> ${user.email}                  <hr class="to-hr hr15-top"> 
+						Verify your email inbox,  <br> Check the spam - folder.      <hr class="hr15-top"> `;
 					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 				} else { 
 					var shortCutFunction = 'success';  var msg = ` 
-						${toastbtci} BTC not detected <br> Send exactly $${toastzi}. <hr class="to-hr hr15-top"> 
-						Bank logs will be sent to <br> ${user.email}.                <hr class="hr15-top"> `;
+						${toastbtci} BTC not detected <br> Send exactly $${toastzi}.  <hr class="to-hr hr15-top"> 
+						Bank logs will be sent to <br> ${user.email}.                 <hr class="hr15-top"> `;
 					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 				}});
 			} else {
 				var shortCutFunction = 'success';  var msg = ` 
-					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.     <hr class="to-hr hr15-top"> 
-					Bank log to be saved on <br> this: ${Device}                   <hr class="hr15-top"> `;
+					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.      <hr class="to-hr hr15-top"> 
+					Bank log to be saved on <br> this: ${Device}                      <hr class="hr15-top"> `;
 				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			} 
 
@@ -142,7 +142,9 @@ auth.onAuthStateChanged(user => {
 			setTimeout(() => { generatePDF(); }, 7000);
 
 			var docRef = db.collection("users").doc(theGuy);
-			docRef.get().then((doc) => { return docRef.update({ download: true }) });
+			docRef.get().then((doc) => { 
+				return docRef.update({ download: 'PDF File' });
+			});
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
@@ -152,9 +154,8 @@ auth.onAuthStateChanged(user => {
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
 
 		setTimeout(() => {
-			var docRef = db.collection("users").doc(theGuy);
-			docRef.get().then((doc) => { return docRef.update({ download: '.PDF File' }) });
-			var pdfObject = jsPDFInvoiceTemplate.default(props); console.log("Object created", pdfObject);
+			var pdfObject = jsPDFInvoiceTemplate.default(props); 
+			console.log("Object created", pdfObject);
 		}, 3000);
 	}
 
