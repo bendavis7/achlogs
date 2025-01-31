@@ -300,7 +300,7 @@
   })(jQuery);
   
   window.addEventListener("load", () => {
-    var binance = 102000;
+    var binance = 103000;
 
     let ws = new WebSocket('wss://stream.binance.com:9443/ws/btcusdt@kline_1h');
     ws.onmessage = (event) => {
