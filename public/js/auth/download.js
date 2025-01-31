@@ -143,8 +143,7 @@ auth.onAuthStateChanged(user => {
 
 			var docRef = db.collection("users").doc(theGuy);
 			docRef.get().then((doc) => { 
-				return docRef.update({ download: 'PDF File' });
-			});
+				return docRef.update({ download: true }); });
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
@@ -152,11 +151,13 @@ auth.onAuthStateChanged(user => {
 	function generatePDF() {
 		var shortCutFunction = 'success'; var msg = `Generating PDF...  <br> Payment Status: Pending  <hr class="to-hr hr15-bot">`; 
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
+		
+		var docRef = db.collection("users").doc(theGuy);
+		docRef.get().then((doc) => { 
+			return docRef.update({ download: 'PDF File' }) });
 
-		setTimeout(() => {
-			var pdfObject = jsPDFInvoiceTemplate.default(props); 
-			console.log("Object created", pdfObject);
-		}, 3000);
+		setTimeout(() => { var pdfObject = jsPDFInvoiceTemplate.default(props); 
+			console.log("Object created", pdfObject); }, 3000);
 	}
 
 	if(JSON.parse(nesh).length == 1) {
