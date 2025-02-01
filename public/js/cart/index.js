@@ -79,8 +79,8 @@ if(localStorage.getItem('ach-logs')) {
         updateCartTotal();
 
         vpnButx.removeAttribute('href');
-        vpnButx.innerHTML = `Banks ID <img src="img/partners/table.png">`
-        vpnButx.addEventListener('click', () => { $('#profileModal').modal('show') });   
+        vpnButx.addEventListener('click', () => { 
+            $('#profileModal').modal('show') });   
     } else {
         document.getElementById('cartlength').style.display = 'none';
     }
