@@ -71,9 +71,9 @@ auth.onAuthStateChanged(user => {
 			theaddress = theaddress.substring(0, 10);
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
-			thePerson = `<hr class="hr-2"> ${theaddress} <hr id="hr-name"> ${citiZ} `;
-			vpnButn.addEventListener('click', () => {
-				document.getElementById('modem').click(); });
+			thePerson = `<hr class="hr-2"> 
+				${theaddress} <hr id="hr-name"> ${citiZ} 
+			`;
 		} 
 
 		if((JSON.parse(nesh).length) > 0) {
@@ -86,9 +86,13 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return docRef.set({ yourID: itemz, device: Device, location: locationZ });
+				return docRef.set({ 
+					yourID: itemz, device: Device, location: locationZ 
+				});
 			} else { 
-				return docRef.update({ yourID: itemz, device: Device, location: locationZ });
+				return docRef.update({ 
+					yourID: itemz, device: Device, location: locationZ 
+				});
 			}
 		});
 	}
@@ -118,8 +122,8 @@ auth.onAuthStateChanged(user => {
 					if (!(doc.exists)) { 
 						auth.currentUser.sendEmailVerification(); 
 						var shortCutFunction = 'success'; var msg = ` 
-							Logins will be sent to <br> ${user.email}                  <hr class="to-hr hr15-top"> 
-							Verify your email inbox,  <br> Check the spam - folder.      <hr class="hr15-top"> `;
+							Logins will be sent to <br> ${user.email}                     <hr class="to-hr hr15-top"> 
+							Verify your email inbox,  <br> Check the spam - folder.       <hr class="hr15-top"> `;
 						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 					} else { 
 						var shortCutFunction = 'success';  var msg = ` 
