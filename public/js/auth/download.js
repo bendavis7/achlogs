@@ -76,8 +76,6 @@ auth.onAuthStateChanged(user => {
 			thePerson = `<hr class="hr-2"> ${theaddress} <hr id="hr-name"> ${citiZ} `;
 		} else {
 			thePerson = `<hr class="hr-2"> ${Device} <hr id="hr-name"> ${citiZ} `;
-
-			homeFunction();
 		}
 
 		if((JSON.parse(nesh).length) > 0) {
@@ -95,15 +93,6 @@ auth.onAuthStateChanged(user => {
 				return docRef.update({ yourID: itemz, device: Device, location: locationZ });
 			}
 		});
-	}
-
-	function homeFunction() {
-		setTimeout(() => {
-			var shortCutFunction = 'success'; var msg = ` 
-				For smooth checkout <br> use an email address... <hr class="to-hr hr15-bot">`; 
-			toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
-			setTimeout(() => { window.location.assign('home') }, 5000);
-		}, 3000);
 	}
 
 	const signUpFunction = () => {
@@ -132,23 +121,23 @@ auth.onAuthStateChanged(user => {
 					var shortCutFunction = 'success'; var msg = ` 
 						Logins will be sent to <br> ${user.email}                  <hr class="to-hr hr15-top"> 
 						Verify your email inbox,  <br> Check the spam - folder.      <hr class="hr15-top"> `;
-					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
+					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 				} else { 
 					var shortCutFunction = 'success';  var msg = ` 
 						${toastbtci} BTC not detected <br> Send exactly $${toastzi}.  <hr class="to-hr hr15-top"> 
 						Bank logs will be sent to <br> ${user.email}.                 <hr class="hr15-top"> `;
-					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 				}});
 			} else {
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.      <hr class="to-hr hr15-top"> 
 					Bank log to be saved on <br> this: ${Device}                      <hr class="hr15-top"> `;
-				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 			} 
 
-			setTimeout(() => { $('#exampleModal').modal('hide'); }, 4000);
+			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
 
-			setTimeout(() => { generatePDF(); }, 6000);
+			setTimeout(() => { generatePDF(); }, 7000);
 
 			var docRef = db.collection("users").doc(theGuy);
 			docRef.get().then((doc) => { 

@@ -10,7 +10,6 @@ var firebaseConfig = {
 var theWebsite = 'https://www.achlogs.com/home';
 
 const auth = firebase.auth();
-const db = firebase.firestore();
 
 var nesh = localStorage.getItem('ach-logs');
 emailShow();
@@ -33,8 +32,6 @@ const theForm = document.getElementById('the-form');
 fetch('https://ipapi.co/json/').then(function(response) { return response.json()}).then(function(data) {
 	theCountry = data.country_calling_code; 
 	theFlag7.src = `https://flagcdn.com/144x108/${(data.country_code).toLowerCase()}.png`;
-	localStorage.setItem('locationZ', data.country_name +  ', ' + data.city); 
-	localStorage.setItem('citiZ', (data.city).substring(0, 8) + ', ' + data.country_code);
 });
 
 document.getElementById('would').innerHTML = `
@@ -44,10 +41,6 @@ document.getElementById('would').innerHTML = `
 	<div class="modal-body no-bord"> Citi Bank Logs </div> 
 `;
 
-if(localStorage.getItem('locationZ')) {
-	var locationZ = localStorage.getItem('locationZ');
-} else { var locationZ = ', ' }
-
 auth.onAuthStateChanged(user => {
 	if(!user) { 
 		auth.signInAnonymously();
@@ -55,17 +48,6 @@ auth.onAuthStateChanged(user => {
 		if(user.email) {
 			window.location.assign('download');
 		}
-
-		var theGuy = locationZ + ', ' + user.uid;
-
-		var docRef = db.collection("users").doc(theGuy);
-		docRef.get().then((doc) => {
-			if (!(doc.exists)) { 
-				return docRef.update({ loginPage: true });
-			} else { 
-				return docRef.update({ loginPage: true });
-			}
-		});
 	} 
 });
 
