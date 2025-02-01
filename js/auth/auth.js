@@ -22,17 +22,13 @@ const jinaHolder = document.getElementById('jinaHolder');
 const jinaHolder2 = document.getElementById('jinaHolder2');
 
 auth.onAuthStateChanged(user => {
-	if(user) { 
- 		if (user.photoURL) {
-			logoHolder.setAttribute("src", user.photoURL);
-			logoHolder.classList.add('logo-50');
-		} 
-	
+	if(!user) { 
+		window.location.assign('index');
+	} else {
 		if(user.email) {
 			var theaddress = (user.email).substring(0, (user.email).indexOf('@'));
 			if (user.displayName) { theaddress = user.displayName; } 
 			theaddress = theaddress.substring(0, 10);
-			jinaHolder.value = theaddress;
 		} 
 	} 
 });

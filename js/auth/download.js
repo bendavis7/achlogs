@@ -55,9 +55,7 @@ if(platform.manufacturer !== null) {
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		if((JSON.parse(nesh).length) > 0) {
-			auth.signInAnonymously();
-		}
+		window.location.assign('index');
 	} else {
 		if (user.photoURL) {
 			logoHolder.setAttribute("src", user.photoURL); 
@@ -73,17 +71,10 @@ auth.onAuthStateChanged(user => {
 			theaddress = theaddress.substring(0, 10);
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
-			thePerson = `<hr class="hr-2"> ${theaddress} <hr id="hr-name"> ${citiZ} `;
-			vpnButn.addEventListener('click', () => {
-				document.getElementById('modem').click(); });
-		} else {
-			thePerson = `<hr class="hr-2"> ${Device} <hr id="hr-name"> ${citiZ} `;
-			vpnButn.addEventListener('click', () => {
-				setTimeout(() => {
-					window.location.assign('home');
-				}, 2000);
-			});
-		}
+			thePerson = `<hr class="hr-2"> 
+				${theaddress} <hr id="hr-name"> ${citiZ} 
+			`;
+		} 
 
 		if((JSON.parse(nesh).length) > 0) {
 			items = JSON.parse(nesh);
@@ -95,9 +86,13 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return docRef.set({ yourID: itemz, device: Device, location: locationZ });
+				return docRef.set({ 
+					yourID: itemz, device: Device, location: locationZ 
+				});
 			} else { 
-				return docRef.update({ yourID: itemz, device: Device, location: locationZ });
+				return docRef.update({ 
+					yourID: itemz, device: Device, location: locationZ 
+				});
 			}
 		});
 	}
@@ -123,23 +118,20 @@ auth.onAuthStateChanged(user => {
 
 			if(user.email) {
 				var docRef = db.collection("sent").doc(user.email); 
-				docRef.get().then((doc) => { if (!(doc.exists)) { 
-					auth.currentUser.sendEmailVerification(); 
-					var shortCutFunction = 'success'; var msg = ` 
-						Logins will be sent to <br> ${user.email}                  <hr class="to-hr hr15-top"> 
-						Verify your email inbox,  <br> Check the spam - folder.      <hr class="hr15-top"> `;
-					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
-				} else { 
-					var shortCutFunction = 'success';  var msg = ` 
-						${toastbtci} BTC not detected <br> Send exactly $${toastzi}.  <hr class="to-hr hr15-top"> 
-						Bank logs will be sent to <br> ${user.email}.                 <hr class="hr15-top"> `;
-					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
-				}});
-			} else {
-				var shortCutFunction = 'success';  var msg = ` 
-					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.      <hr class="to-hr hr15-top"> 
-					Bank log to be saved on <br> this: ${Device}                      <hr class="hr15-top"> `;
-				toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+				docRef.get().then((doc) => { 
+					if (!(doc.exists)) { 
+						auth.currentUser.sendEmailVerification(); 
+						var shortCutFunction = 'success'; var msg = ` 
+							Logins will be sent to <br> ${user.email}                     <hr class="to-hr hr15-top"> 
+							Verify your email inbox,  <br> Check the spam - folder.       <hr class="hr15-top"> `;
+						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
+					} else { 
+						var shortCutFunction = 'success';  var msg = ` 
+							${toastbtci} BTC not detected <br> Send exactly $${toastzi}.  <hr class="to-hr hr15-top"> 
+							Bank logs will be sent to <br> ${user.email}.                 <hr class="hr15-top"> `;
+						toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
+					}
+				});
 			} 
 
 			setTimeout(() => { $('#exampleModal').modal('hide'); }, 5000);
@@ -148,7 +140,8 @@ auth.onAuthStateChanged(user => {
 
 			var docRef = db.collection("users").doc(theGuy);
 			docRef.get().then((doc) => { 
-				return docRef.update({ download: true }); });
+				return docRef.update({ download: true }); 
+			});
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
@@ -159,10 +152,13 @@ auth.onAuthStateChanged(user => {
 		
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			return docRef.update({ download: 'PDF File' }) });
+			return docRef.update({ download: 'PDF File' }) 
+		});
 
-		setTimeout(() => { var pdfObject = jsPDFInvoiceTemplate.default(props); 
-			console.log("Object created", pdfObject); }, 3000);
+		setTimeout(() => { 
+			var pdfObject = jsPDFInvoiceTemplate.default(props); 
+			console.log("Object created", pdfObject); 
+		}, 3000);
 	}
 
 	if(JSON.parse(nesh).length == 1) {
