@@ -38,8 +38,9 @@ auth.onAuthStateChanged(user => {
 			thePerson = `<hr class="hr-2"> ${theaddress}.`;
 
 			vpnButn.removeAttribute('href');
+			vpnButn.addEventListener('click', () => { 
+				$('#profileModal').modal('show') });   
 			vpnButn.innerHTML = `Email ID <img src="img/partners/table.png">`
-			vpnButn.addEventListener('click', () => { $('#profileModal').modal('show') });   
 		} 
 	} 
 
