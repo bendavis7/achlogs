@@ -5,6 +5,8 @@ var showingToast = document.getElementById('showtoasts');
 
 var theLogo = document.getElementById('logo');
 
+var vpnButx = document.getElementById('vpn');
+
 var logs = localStorage.getItem('ach-logs');
 
 if(localStorage.getItem('ach-logs')) {
@@ -75,6 +77,10 @@ if(localStorage.getItem('ach-logs')) {
         }
 
         updateCartTotal();
+
+        vpnButx.removeAttribute('href');
+        vpnButx.innerHTML = `Banks ID <img src="img/partners/table.png">`
+        vpnButx.addEventListener('click', () => { $('#profileModal').modal('show') });   
     } else {
         document.getElementById('cartlength').style.display = 'none';
     }

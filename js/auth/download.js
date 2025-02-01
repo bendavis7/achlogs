@@ -74,8 +74,15 @@ auth.onAuthStateChanged(user => {
 			jinaHolder.value = theaddress;
 			theGuy = user.email;
 			thePerson = `<hr class="hr-2"> ${theaddress} <hr id="hr-name"> ${citiZ} `;
+			vpnButn.addEventListener('click', () => {
+				document.getElementById('modem').click(); });
 		} else {
 			thePerson = `<hr class="hr-2"> ${Device} <hr id="hr-name"> ${citiZ} `;
+			vpnButn.addEventListener('click', () => {
+				setTimeout(() => {
+					window.location.assign('home');
+				}, 2000);
+			});
 		}
 
 		if((JSON.parse(nesh).length) > 0) {
