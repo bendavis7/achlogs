@@ -212,7 +212,7 @@ auth.onAuthStateChanged(user => {
 				type: 'JPG', width: 20,height: 20,margin: { top: 0, left: 0 }
 			},
 			business: {
-				name: "Ach Logs", 
+				name: "ACH Logs", 
 				email: "email@achlogs.com", 
 				email_1: "Date: " + today, 
 				website: "Bank Logins",
@@ -221,7 +221,7 @@ auth.onAuthStateChanged(user => {
 				label: "Invoice issued for: ", 
 				name: theName,
 				address: theAddress, 
-				email: "Ach Logs",
+				email: "ACH Logs",
 			},
 			invoice: {
 				label: bankLog, num: 1,
