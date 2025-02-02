@@ -49,7 +49,7 @@ auth.onAuthStateChanged(user => {
 		}
 	} else {
 		if(user.email) {
-			window.location.assign('home');
+			window.location.assign('download');
 		}
 	} 
 });
@@ -132,7 +132,7 @@ function runFx() {
 const homeFx = () => {
 	event.preventDefault(); 
 	setTimeout(() => { 
-		window.location.assign('home'); 
+		window.location.assign('download'); 
 	}, 2000);
 }
 
@@ -156,7 +156,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, timeOut: 1200}; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 	}).then(() => { 
 		setTimeout(() => { 
-			if(theLink.includes('@')) { window.location.assign('home') } 
+			if(theLink.includes('@')) { window.location.assign('download') } 
 		}, 300); 
 	})
 }
