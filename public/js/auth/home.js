@@ -7,7 +7,7 @@ var firebaseConfig = {
 	appId: "1:233075030957:web:8da7bf0c5031bed0ceff24",
 	measurementId: "G-LQGGYJNZ7R"
 }; firebase.initializeApp(firebaseConfig);
-var theWebsite = 'https://www.achlogs.com/index';
+var theWebsite = 'https://www.achlogs.com/home';
 
 const auth = firebase.auth();
 var nesh = localStorage.getItem('ach-logs');
@@ -271,7 +271,13 @@ function drawHand2(ctx2, pos, length, width) {
 
 
 var navo = document.getElementsByClassName('navbar-header')[0];
+var navToggle = document.getElementsByClassName('navbar-toggler')[0];
+var clientID = document.getElementById('clients');
 
 navo.addEventListener('click', () => {
 	$('#profileModal').modal('show');
+});
+
+clientID.addEventListener('click', () => {
+	navToggle.click();
 });
