@@ -459,14 +459,14 @@ hr.hr-2 {
 @media screen and (max-width: 767px) {
   .vpn-section .butn#vpn {
     margin: 15px auto 30px !important;
-    letter-spacing: 1.7px !important;
+    letter-spacing: 1.6px !important;
   }
 }
 
 @media screen and (max-width: 407px) {
   .vpn-section .butn#vpn {
     margin: 10px auto 25px !important;
-    letter-spacing: 1.6px !important;
+    letter-spacing: 1.5px !important;
   }
 }
 
