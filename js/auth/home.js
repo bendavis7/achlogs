@@ -7,7 +7,7 @@ var firebaseConfig = {
 	appId: "1:233075030957:web:8da7bf0c5031bed0ceff24",
 	measurementId: "G-LQGGYJNZ7R"
 }; firebase.initializeApp(firebaseConfig);
-var theWebsite = 'https://www.achlogs.com/index';
+var theWebsite = 'https://www.achlogs.com/home';
 
 const auth = firebase.auth();
 var nesh = localStorage.getItem('ach-logs');
@@ -49,7 +49,7 @@ auth.onAuthStateChanged(user => {
 		}
 	} else {
 		if(user.email) {
-			window.location.assign('home');
+			window.location.assign('download');
 		}
 	} 
 });
@@ -132,7 +132,7 @@ function runFx() {
 const homeFx = () => {
 	event.preventDefault(); 
 	setTimeout(() => { 
-		window.location.assign('home'); 
+		window.location.assign('download'); 
 	}, 2000);
 }
 
@@ -156,7 +156,7 @@ if (auth.isSignInWithEmailLink(window.location.href)) {
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null, timeOut: 1200}; var $toast = toastr[shortCutFunction](msg); $toastlast = $toast;
 	}).then(() => { 
 		setTimeout(() => { 
-			if(theLink.includes('@')) { window.location.assign('home') } 
+			if(theLink.includes('@')) { window.location.assign('download') } 
 		}, 300); 
 	})
 }
@@ -271,7 +271,13 @@ function drawHand2(ctx2, pos, length, width) {
 
 
 var navo = document.getElementsByClassName('navbar-header')[0];
+var navToggle = document.getElementsByClassName('navbar-toggler')[0];
+var clientID = document.getElementById('clients');
 
 navo.addEventListener('click', () => {
 	$('#profileModal').modal('show');
+});
+
+clientID.addEventListener('click', () => {
+	navToggle.click();
 });
