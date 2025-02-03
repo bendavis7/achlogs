@@ -211,7 +211,7 @@ if (document.getElementById('boa01')) {
     (chime011.innerHTML=`Buy $${(chime11.innerHTML.replace("$","").replace(",","")/btc).toFixed(0)} <img src="co.png">`)
 } else if (document.getElementById('citi01')) {
     (citi1.innerHTML = "$3,540"),
-    (citi2.innerHTML = "$4,387"),
+    (citi2.innerHTML = "$4,487"),
     (citi3.innerHTML = "$4,815"),
     (citi4.innerHTML = "$5,610"),
     (citi5.innerHTML = "$6,351"),

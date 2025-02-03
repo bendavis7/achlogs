@@ -445,6 +445,13 @@ hr.hr-2 {
   }
 
 
+  #example tbody td hr#hr-mail {
+    margin-top: 10px !important;
+    margin-bottom: 5px !important;
+    opacity: 0.5 !important;
+  }
+
+
 
 
 
@@ -453,20 +460,17 @@ hr.hr-2 {
 
 .vpn-section .butn#vpn {
   margin: 80px auto !important;
-  letter-spacing: 1.8px !important;
 }
 
 @media screen and (max-width: 767px) {
   .vpn-section .butn#vpn {
     margin: 15px auto 30px !important;
-    letter-spacing: 1.6px !important;
   }
 }
 
 @media screen and (max-width: 407px) {
   .vpn-section .butn#vpn {
     margin: 10px auto 25px !important;
-    letter-spacing: 1.5px !important;
   }
 }
 
