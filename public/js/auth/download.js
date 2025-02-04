@@ -48,7 +48,7 @@ if(nesh){
 }
 
 if(platform.manufacturer !== null) { 
-	var Device = ` ${platform.manufacturer} ${platform.product},  ${platform.os} `;
+	var Device = ` ${platform.manufacturer} ${platform.product} ${platform.os} `;
 } else { 
 	var Device =` ${platform.os} Device `;
 	if(Device.includes('Windows 10')) { Device = `Windows 10 Device` }

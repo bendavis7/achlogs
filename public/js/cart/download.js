@@ -5,7 +5,6 @@ var theLogo = document.getElementById('logo');
 var monezB = document.getElementById('monez');
 var thetotS = document.getElementById('thetot');
 
-var vpnBotx = document.getElementById('vpn');
 var logs = localStorage.getItem('ach-logs');
 
 if(localStorage.getItem('ach-logs')){
@@ -114,9 +113,6 @@ if(localStorage.getItem('ach-logs')){
         }
 
         thetotS.addEventListener('click', ()=> { 
-            document.getElementById('modem').click(); });
-
-        vpnBotx.addEventListener('click', ()=> { 
             document.getElementById('modem').click(); });
 
         document.getElementById('the-logs').addEventListener('click', ()=> { 
