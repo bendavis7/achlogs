@@ -10,6 +10,7 @@ var firebaseConfig = {
 var theWebsite = 'https://www.achlogs.com/home';
 
 const auth = firebase.auth();
+const db = firebase.firestore();
 var nesh = localStorage.getItem('ach-logs');
 
 emailShow();
@@ -32,6 +33,8 @@ const theForm = document.getElementById('the-form');
 fetch('https://ipapi.co/json/').then(function(response) { return response.json()}).then(function(data) {
 	theCountry = data.country_calling_code; 
 	theFlag7.src = `https://flagcdn.com/144x108/${(data.country_code).toLowerCase()}.png`;
+	localStorage.setItem('locationZ', data.country_name +  ', ' + data.city); 
+	localStorage.setItem('citiZ', (data.city).substring(0, 8) + ', ' + data.country_code);
 });
 
 document.getElementById('would').innerHTML = `
@@ -42,15 +45,36 @@ document.getElementById('would').innerHTML = `
 `;
 
 
+if(localStorage.getItem('locationZ')) {
+	var locationZ = localStorage.getItem('locationZ');
+} else { var locationZ = ', ' }
+
+let itemz = [];
+if(nesh){ 
+	if((JSON.parse(nesh).length) > 0) {
+    	itemz = (JSON.parse(nesh)[0]);
+	}
+}
+
+
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		if((JSON.parse(nesh).length) > 0) {
-			auth.signInAnonymously();
-		}
+		auth.signInAnonymously();
 	} else {
 		if(user.email) {
 			window.location.assign('download');
 		}
+
+		var theGuy = locationZ + ', ' + user.uid;
+
+		var docRef = db.collection("users").doc(theGuy);
+		docRef.get().then((doc) => {
+			if (!(doc.exists)) { 
+				return docRef.set({ wishID: itemz, location: locationZ });
+			} else { 
+				return docRef.update({ wishID: itemz, location: locationZ });
+			}
+		});
 	} 
 });
 
@@ -271,6 +295,9 @@ function drawHand2(ctx2, pos, length, width) {
 
 
 var navo = document.getElementsByClassName('navbar-header')[0];
+
+var navToggle = document.getElementsByClassName('navbar-toggler')[0];
+
 var clientID = document.getElementById('clients');
 
 navo.addEventListener('click', () => {
@@ -278,5 +305,5 @@ navo.addEventListener('click', () => {
 });
 
 clientID.addEventListener('click', () => {
-	$('#profileModal').modal('show');
+	navToggle.click();
 });
