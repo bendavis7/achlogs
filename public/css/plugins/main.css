@@ -1209,7 +1209,7 @@ td {
 }
 @media (max-width: 591px) {
   .table-primary th {
-      padding: 13px 13px !important;
+      padding: 14px 14px !important;
 
       text-align: center !important;
   }
