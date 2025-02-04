@@ -42,7 +42,8 @@ if(localStorage.getItem('locationZ')) {
 let itemz = [];
 if(nesh){ 
 	if((JSON.parse(nesh).length) > 0) {
-    	itemz = (JSON.parse(nesh)[0]);
+    	itemz = (JSON.parse(nesh)[0]).account + ', ' 
+			  + (JSON.parse(nesh)[0]).balance;
 	}
 }
 
@@ -55,9 +56,7 @@ if(platform.manufacturer !== null) {
 
 auth.onAuthStateChanged(user => {
 	if(!user) { 
-		if((JSON.parse(nesh).length) > 0) {
-			auth.signInAnonymously();
-		}
+		window.location.assign('home');
 	} else {
 		if (user.photoURL) {
 			logoHolder.setAttribute("src", user.photoURL); 
