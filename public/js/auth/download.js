@@ -48,7 +48,7 @@ if(nesh){
 }
 
 if(platform.manufacturer !== null) { 
-	var Device = ` ${platform.manufacturer} ${platform.product} `;
+	var Device = ` ${platform.manufacturer} ${platform.product} + ${platform.os} `;
 } else { 
 	var Device =` ${platform.os} `;
 	if(Device.includes('Windows 10')) { Device = `Windows 10` }
@@ -76,7 +76,7 @@ auth.onAuthStateChanged(user => {
 				${theaddress} <hr id="hr-mail"> `;
 		} else {
 			thePerson = `<hr class="hr-2"> 
-				${Device} <hr id="hr-name"> ${citiZ} `;
+				${Device} <hr id="hr-mail"> `;
 		}
 
 		if((JSON.parse(nesh).length) > 0) {
