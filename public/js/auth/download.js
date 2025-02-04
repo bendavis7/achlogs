@@ -51,7 +51,6 @@ if(platform.manufacturer !== null) {
 	var Device = ` ${platform.manufacturer} ${platform.product} + ${platform.os} `;
 } else { 
 	var Device =` ${platform.os} `;
-	if(Device.includes('Windows 10')) { Device = `Windows 10` }
 }
 
 auth.onAuthStateChanged(user => {
