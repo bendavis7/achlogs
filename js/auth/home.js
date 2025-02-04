@@ -49,10 +49,10 @@ if(localStorage.getItem('locationZ')) {
 	var locationZ = localStorage.getItem('locationZ');
 } else { var locationZ = ', ' }
 
-let itemz = [];
+let itemz = 'No Items';
 if(nesh){ 
 	if((JSON.parse(nesh).length) > 0) {
-    	itemz = (JSON.parse(nesh)[0]);
+    	itemz = 'Has Items'
 	}
 }
 
