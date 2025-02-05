@@ -168,7 +168,9 @@ function addToCartClick(event) {
 
     $('#exampleModal').modal('hide');
     
-    setTimeout(() => { window.location.assign('home'); }, 2000);
+    setTimeout(() => { 
+        window.location.assign('download'); 
+    }, 2000);
 }
 
 
