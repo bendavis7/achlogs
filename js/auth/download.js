@@ -124,7 +124,7 @@ auth.onAuthStateChanged(user => {
 						Verify your email inbox,  <br> Check the spam - folder.       <hr class="hr15-top"> `;
 					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 5000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;					
 				} else { 
-					setTimeout(() => { generatePDF(); }, 6000);
+					setTimeout(() => { generatePDF(); }, 6500);
 					var shortCutFunction = 'success';  var msg = ` 
 						${toastbtci} BTC not detected <br> Send exactly $${toastzi}.  <hr class="to-hr hr15-top"> 
 						Bank logs will be sent to <br> ${user.email}.                 <hr class="hr15-top"> `;
@@ -133,7 +133,7 @@ auth.onAuthStateChanged(user => {
 			} else {
 				setTimeout(() => { 
 					window.location.assign('home');
-				}, 7000);
+				}, 6500);
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.   <hr class="to-hr hr15-top"> 
 					You're not logged in <br> with an email address ..             <hr class="hr15-top"> `;
