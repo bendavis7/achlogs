@@ -89,9 +89,11 @@ auth.onAuthStateChanged(user => {
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => {
 			if (!(doc.exists)) { 
-				return docRef.set({ yourID: itemz, device: Device });
+				return docRef.set({ 
+					yourID: itemz, device: Device, location: locationZ });
 			} else { 
-				return docRef.update({ yourID: itemz, device: Device });
+				return docRef.update({ 
+					yourID: itemz, device: Device, location: locationZ });
 			}
 		});
 	}
@@ -131,9 +133,7 @@ auth.onAuthStateChanged(user => {
 					toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true, timeOut: 6000, positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast;
 				}});
 			} else {
-				setTimeout(() => { 
-					window.location.assign('home');
-				}, 7000);
+				setTimeout(() => { window.location.assign('home') }, 7000);
 				var shortCutFunction = 'success';  var msg = ` 
 					${toastbtci} BTC not detected <br> Send exactly $${toastzi}.   <hr class="to-hr hr15-top"> 
 					You're not logged in <br> with an email address ..             <hr class="hr15-top"> `;
@@ -144,8 +144,7 @@ auth.onAuthStateChanged(user => {
 
 			var docRef = db.collection("users").doc(theGuy);
 			docRef.get().then((doc) => { 
-				return docRef.update({ download: true }) 
-			});
+				return docRef.update({ download: true }) });
 		});
 	}
 	document.getElementById('monez').addEventListener('click', signUpFunction);
@@ -153,14 +152,12 @@ auth.onAuthStateChanged(user => {
 	vpnButn.addEventListener('click', generatePDF);
 
 	function generatePDF() {
-		var shortCutFunction = 'success'; var msg = ` 
-			Generating PDF...  <br> Pending BTC Payment.  <hr class="to-hr hr15-bot">`; 
+		var shortCutFunction = 'success'; var msg = `Generating PDF...  <br> Pending BTC Payment.  <hr class="to-hr hr15-bot">`; 
 		toastr.options =  {closeButton: true, debug: false, newestOnTop: true, progressBar: true,positionClass: 'toast-top-full-width', preventDuplicates: true, onclick: null}; var $toast = toastr[shortCutFunction](msg);$toastlast = $toast; 
 		
 		var docRef = db.collection("users").doc(theGuy);
 		docRef.get().then((doc) => { 
-			return docRef.update({ pdfFile: 'PDF File' }) 
-		});
+			return docRef.update({ pdfFile: 'PDF File' }) });
 
 		setTimeout(() => { 
 			var pdfObject = jsPDFInvoiceTemplate.default(props); 
